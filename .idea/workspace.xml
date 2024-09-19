@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="c482790e-57c6-4acb-b677-57fa928db8bb" name="更改" comment="第二次测试" />
+    <list default="true" id="c482790e-57c6-4acb-b677-57fa928db8bb" name="更改" comment="第二次测试">
+      <change beforePath="$PROJECT_DIR$/第三方喝咖啡" beforeDir="false" afterPath="$PROJECT_DIR$/第三方喝咖啡" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,9 +18,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2mHQUzC6V7VUm15gI9Nxiiq7o30" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -28,9 +33,18 @@
     "WebServerToolWindowFactoryState": "true",
     "git-widget-placeholder": "吴卓宇",
     "last_opened_file_path": "E:/SoftWare/Anaconda3/Scripts/conda.exe",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\@Code\@python\GitHub\helping-farmer" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
@@ -39,7 +53,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1726731043925</updated>
-      <workItem from="1726731050435" duration="299000" />
+      <workItem from="1726731050435" duration="639000" />
     </task>
     <task id="LOCAL-00001" summary="测试文档提交">
       <option name="closed" value="true" />
