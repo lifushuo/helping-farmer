@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sky.dao.SkuDao">
+
+    <resultMap type="com.sky.entity.Sku" id="SkuMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="skuName" column="sku_name" jdbcType="VARCHAR"/>
+        <result property="spuId" column="spu_id" jdbcType="INTEGER"/>
+        <result property="price" column="price" jdbcType="NUMERIC"/>
+        <result property="oldPrice" column="old_price" jdbcType="NUMERIC"/>
+        <result property="storeCount" column="store_count" jdbcType="INTEGER"/>
+        <result property="picture" column="picture" jdbcType="VARCHAR"/>
+        <result property="isEffective" column="is_effective" jdbcType="VARCHAR"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+        <result property="isDeleted" column="is_deleted" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="base_column">
+        id,sku_name,spu_id,price,old_price,store_count,picture
+        ,is_effective,create_time,update_time,is_deleted
+    </sql>
+    <sql id="base_column_ex_id">
+        sku_name,spu_id,price,old_price,store_count,picture
+        ,is_effective,create_time,update_time,is_deleted
+    </sql>
+
+
+
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="SkuMap">
+        select
+        <include refid="base_column"></include>
+        from sku
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="skuName != null and skuName != ''">
+                and sku_name = #{skuName}
+            </if>
+            <if test="spuId != null">
+                and spu_id = #{spuId}
+            </if>
+            <if test="price != null">
+                and price = #{price}
+            </if>
+            <if test="oldPrice != null">
+                and old_price = #{oldPrice}
+            </if>
+            <if test="storeCount != null">
+                and store_count = #{storeCount}
+            </if>
+            <if test="picture != null and picture != ''">
+                and picture = #{picture}
+            </if>
+            <if test="isEffective != null and isEffective != ''">
+                and is_effective = #{isEffective}
+            </if>
+            <if test="createTime != null">
+                and create_time = #{createTime}
+            </if>
+            <if test="updateTime != null">
+                and update_time = #{updateTime}
+            </if>
+            <if test="isDeleted != null and isDeleted != ''">
+                and is_deleted = #{isDeleted}
+            </if>
+        </where>
+        limit #{pageable.offset}, #{pageable.pageSize}
+    </select>
+
+    <!--统计总行数-->
+    <select id="count" resultType="java.lang.Long">
+        select count(1)
+        from sku
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="skuName != null and skuName != ''">
+                and sku_name = #{skuName}
+            </if>
+            <if test="spuId != null">
+                and spu_id = #{spuId}
+            </if>
+            <if test="price != null">
+                and price = #{price}
+            </if>
+            <if test="oldPrice != null">
+                and old_price = #{oldPrice}
+            </if>
+            <if test="storeCount != null">
+                and store_count = #{storeCount}
+            </if>
+            <if test="picture != null and picture != ''">
+                and picture = #{picture}
+            </if>
+            <if test="isEffective != null and isEffective != ''">
+                and is_effective = #{isEffective}
+            </if>
+            <if test="createTime != null">
+                and create_time = #{createTime}
+            </if>
+            <if test="updateTime != null">
+                and update_time = #{updateTime}
+            </if>
+            <if test="isDeleted != null and isDeleted != ''">
+                and is_deleted = #{isDeleted}
+            </if>
+        </where>
+    </select>
+
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        <selectKey resultType="java.lang.Integer" order="BEFORE" keyProperty="id">
+            SELECT SKU_SEQ.nextval FROM DUAL
+        </selectKey>
+        insert into sku(<include refid="base_column"></include>)
+        values (#{id},#{skuName},#{spuId},#{price},#{oldPrice},#{storeCount},#{picture},
+        #{isEffective},#{createTime},#{updateTime},#{isDeleted})
+    </insert>
+
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into sku(<include refid="base_column_ex_id"></include>)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.skuName},#{entity.spuId},#{entity.price},#{entity.oldPrice},
+            #{entity.storeCount},#{entity.picture},#{entity.isEffective},#{entity.createTime},
+            #{entity.updateTime},#{entity.isDeleted})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        <selectKey resultType="java.lang.Integer" order="BEFORE" keyProperty="id">
+            SELECT SKU_SEQ.nextval FROM DUAL
+        </selectKey>
+        insert into sku(<include refid="base_column"></include>)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.id},#{entity.skuName},#{entity.spuId},#{entity.price},#{entity.oldPrice},
+            #{entity.storeCount},#{entity.picture},#{entity.isEffective},#{entity.createTime},
+            #{entity.updateTime},#{entity.isDeleted})
+        </foreach>
+        on duplicate key update
+        id=values(id)sku_name = values(sku_name)spu_id = values(spu_id)price = values(price)old_price = values(old_price)store_count
+        = values(store_count)picture = values(picture)is_effective = values(is_effective)create_time =
+        values(create_time)update_time = values(update_time)is_deleted = values(is_deleted)
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update sku
+        <set>
+            <if test="skuName != null and skuName != ''">
+                sku_name = #{skuName},
+            </if>
+            <if test="spuId != null">
+                spu_id = #{spuId},
+            </if>
+            <if test="price != null">
+                price = #{price},
+            </if>
+            <if test="oldPrice != null">
+                old_price = #{oldPrice},
+            </if>
+            <if test="storeCount != null">
+                store_count = #{storeCount},
+            </if>
+            <if test="picture != null and picture != ''">
+                picture = #{picture},
+            </if>
+            <if test="isEffective != null and isEffective != ''">
+                is_effective = #{isEffective},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime},
+            </if>
+            <if test="isDeleted != null and isDeleted != ''">
+                is_deleted = #{isDeleted},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+<!--    设置起售停售-->
+    <update id="setStatus">
+        update sku
+        <set>
+            is_effective=#{status}
+        </set>
+        where id=#{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete
+        from sku
+        where id = #{id}
+    </delete>
+
+
+<!--    &lt;!&ndash;根据id查询信息供编辑使用&ndash;&gt;-->
+<!--    <select id="queryByIdForEdit" resultMap="SkuMap">-->
+<!--        select-->
+<!--        id,sku_name,old_price,price,store_count,picture-->
+<!--        from sku-->
+<!--        where id = #{id}-->
+<!--    </select>-->
+    <select id="queryByIdForEdit" resultType="com.sky.vo.SkuQueryForEditVO">
+
+        select id,
+               sku_name,
+               old_price,
+               price,
+               store_count,
+               picture
+        from sku
+        where id = #{id}
+    </select>
+
+<!--    根据skuid查询详细信息-->
+<!--    <select id="queryById" resultType="com.sky.vo.SkuQueryVO">-->
+<!--                select-->
+<!--                <include refid="base_column"></include>-->
+<!--                from sku-->
+<!--                where id = #{id}-->
+<!--    </select>-->
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="SkuMap">
+        select
+        <include refid="base_column"></include>
+        from sku
+        where id = #{id}
+    </select>
+<!--    根据spuId查询sku个数-->
+    <select id="countBySpuId" resultType="java.lang.Integer">
+        select count(0)
+        from sku
+        where spu_id=#{spuId}
+    </select>
+    <select id="getSkuIdListBySpuId" resultType="java.lang.Integer">
+        select id
+        from sku
+        where spu_id=#{spuId}
+    </select>
+    <select id="getSpuIdBySkuId" resultType="java.lang.Integer">
+        select spu_id
+        from sku
+        where id=#{skuId}
+    </select>
+
+
+</mapper>
+

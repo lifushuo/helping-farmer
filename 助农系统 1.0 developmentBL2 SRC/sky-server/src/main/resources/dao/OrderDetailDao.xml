@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sky.dao.OrderDetailDao">
+
+    <resultMap type="com.sky.entity.OrderDetail" id="OrderDetailMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="spuid" column="spuid" jdbcType="INTEGER"/>
+        <result property="skuid" column="skuid" jdbcType="INTEGER"/>
+        <result property="orderId" column="order_id" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="base_colum">
+        id,spuid,skuid,order_id,count
+    </sql>
+    <sql id="base_colum_ex_id">
+        spuid,skuid,order_id,count
+    </sql>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="OrderDetailMap">
+        select
+        <include refid="base_colum"></include>
+        from order_detail
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="OrderDetailMap">
+        select
+        <include refid="base_colum"></include>
+
+        from order_detail
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="spuid != null">
+                and spuid = #{spuid}
+            </if>
+            <if test="skuid != null">
+                and skuid = #{skuid}
+            </if>
+            <if test="orderId != null">
+                and order_id = #{orderId}
+            </if>
+            <if test="count != null">
+                and count =#{count}
+            </if>
+        </where>
+        limit #{pageable.offset}, #{pageable.pageSize}
+    </select>
+
+    <!--统计总行数-->
+    <select id="count" resultType="java.lang.Long">
+        select count(1)
+        from order_detail
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="spuid != null">
+                and spuid = #{spuid}
+            </if>
+            <if test="skuid != null">
+                and skuid = #{skuid}
+            </if>
+            <if test="orderId != null">
+                and order_id = #{orderId}
+            </if>
+            <if test="count != null">
+                and count =#{count}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        <selectKey resultType="java.lang.Integer" order="BEFORE" keyProperty="id">
+            SELECT ORDER_DETAIL_SEQ.nextval FROM DUAL
+        </selectKey>
+        insert into order_detail(
+        <include refid="base_colum"></include>
+        )
+        values (#{id},#{spuid},#{skuid},#{orderId},#{count})
+    </insert>
+
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        <selectKey resultType="java.lang.Integer" order="BEFORE" keyProperty="id">
+            SELECT ORDER_DETAIL_SEQ.nextval FROM DUAL
+        </selectKey>
+        insert into order_detail(<include refid="base_colum"></include>)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.id},#{entity.spuid},#{entity.skuid},#{entity.orderId},#{count})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        <selectKey resultType="java.lang.Integer" order="BEFORE" keyProperty="id">
+            SELECT ORDER_DETAIL_SEQ.nextval FROM DUAL
+        </selectKey>
+        insert into order_detail(<include refid="base_colum"></include>)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.id},#{entity.spuid},#{entity.skuid},#{entity.orderId},#{count})
+        </foreach>
+        on duplicate key update
+        id=values(id)spuid = values(spuid)skuid = values(skuid)order_id = values(order_id)
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update order_detail
+        <set>
+            <if test="spuid != null">
+                spuid = #{spuid},
+            </if>
+            <if test="skuid != null">
+                skuid = #{skuid},
+            </if>
+            <if test="orderId != null">
+                order_id = #{orderId},
+            </if>
+            <if test="count != null">
+                and count =#{count}
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete
+        from order_detail
+        where id = #{id}
+    </delete>
+
+<!--根据orderId获取sku和spu相关信息-->
+    <select id="getOrderDetailVOList" resultType="com.sky.vo.OrderDetailVO">
+        SELECT
+            od.order_id as id,
+            od.skuid as skuid,
+            s.sku_name as skuName,
+            s.old_price as skuOldPrice,
+            s.picture as skuPicture,
+            s.price as skuPrice,
+            -- 这里可以列出更多 sku 表中的属性
+            sp.id as spuId,
+            sp.spu_name as spuName,
+            sp.discount as spuDiscount
+        -- 这里可以列出更多 spu 表中的属性
+        FROM
+            order_detail od
+                JOIN
+            sku s ON od.skuid = s.id
+                JOIN
+            spu sp ON s.spu_id = sp.id
+        WHERE
+            od.order_id = #{id}
+
+
+    </select>
+
+
+
+</mapper>
+

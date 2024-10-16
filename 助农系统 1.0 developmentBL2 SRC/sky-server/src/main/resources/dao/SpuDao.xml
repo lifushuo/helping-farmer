@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sky.dao.SpuDao">
+
+    <resultMap type="com.sky.entity.Spu" id="SpuMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="spuName" column="spu_name" jdbcType="VARCHAR"/>
+        <result property="price" column="price" jdbcType="NUMERIC"/>
+        <result property="discount" column="discount" jdbcType="NUMERIC"/>
+        <result property="storeCount" column="store_count" jdbcType="INTEGER"/>
+        <result property="salesCount" column="sales_count" jdbcType="INTEGER"/>
+        <result property="picture" column="picture" jdbcType="VARCHAR"/>
+        <result property="description" column="description" jdbcType="VARCHAR"/>
+        <result property="isEffective" column="is_effective" jdbcType="VARCHAR"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+        <result property="isDeleted" column="is_deleted" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="base_column">
+        id,spu_name,price,discount,store_count,sales_count,picture,description,
+        is_effective,create_time,update_time,is_deleted,category2_id
+    </sql>
+    <sql id="base_column_ex_id">
+        spu_name,price,discount,store_count,sales_count,picture,description,
+        is_effective,create_time,update_time,is_deleted,category2_id
+    </sql>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="SpuMap">
+        select
+<include refid="base_column"></include>
+        from spu
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="SpuMap">
+        select
+<include refid="base_column"></include>
+        from spu
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="spuName != null and spuName != ''">
+                and spu_name = #{spuName}
+            </if>
+            <if test="price != null">
+                and price = #{price}
+            </if>
+            <if test="discount != null">
+                and discount = #{discount}
+            </if>
+            <if test="storeCount != null">
+                and store_count = #{storeCount}
+            </if>
+            <if test="salesCount != null">
+                and sales_count = #{salesCount}
+            </if>
+            <if test="picture != null and picture != ''">
+                and picture = #{picture}
+            </if>
+            <if test="description != null and description != ''">
+                and description = #{description}
+            </if>
+            <if test="isEffective != null and isEffective != ''">
+                and is_effective = #{isEffective}
+            </if>
+            <if test="createTime != null">
+                and create_time = #{createTime}
+            </if>
+            <if test="updateTime != null">
+                and update_time = #{updateTime}
+            </if>
+            <if test="isDeleted != null and isDeleted != ''">
+                and is_deleted = #{isDeleted}
+            </if>
+            <if test="category2_id != null and category2_id != ''">
+                and category2_id = #{category2Id}
+            </if>
+        </where>
+        limit #{pageable.offset}, #{pageable.pageSize}
+    </select>
+
+    <!--统计总行数-->
+    <select id="count" resultType="java.lang.Long">
+        select count(1)
+        from spu
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="spuName != null and spuName != ''">
+                and spu_name = #{spuName}
+            </if>
+            <if test="price != null">
+                and price = #{price}
+            </if>
+            <if test="discount != null">
+                and discount = #{discount}
+            </if>
+            <if test="storeCount != null">
+                and store_count = #{storeCount}
+            </if>
+            <if test="salesCount != null">
+                and sales_count = #{salesCount}
+            </if>
+            <if test="picture != null and picture != ''">
+                and picture = #{picture}
+            </if>
+            <if test="description != null and description != ''">
+                and description = #{description}
+            </if>
+            <if test="isEffective != null and isEffective != ''">
+                and is_effective = #{isEffective}
+            </if>
+            <if test="createTime != null">
+                and create_time = #{createTime}
+            </if>
+            <if test="updateTime != null">
+                and update_time = #{updateTime}
+            </if>
+            <if test="isDeleted != null and isDeleted != ''">
+                and is_deleted = #{isDeleted}
+            </if>
+            <if test="category2_id != null and category2_id != ''">
+                and category2_id = #{category2Id}
+            </if>
+        </where>
+    </select>
+    <select id="getListByCateory1Id" resultType="com.sky.vo.SpuListVO">
+        select spu_name as spuName, spu.id as spuId
+        from primary_classification as a
+                 join secondary_classification as b
+                      on a.id = b.parent_id
+                 join spu on b.id = spu.category2_id
+        where a.id = #{id}
+
+
+    </select>
+    <select id="getListByCateory2Id" resultType="com.sky.vo.SpuListVO">
+        select spu_name as spuName, spu.id as spuId
+        from spu
+                 join secondary_classification  a on a.id = spu.category2_id
+        where a.id = #{id}
+
+
+    </select>
+    <select id="selectByCategory2ID" resultType="com.sky.vo.SPUPageItemVO">
+        select a.id  spuId, a.spu_name  name , a.description  description
+            from spu  a
+        where a.category2_id = #{category2Id}
+    </select>
+    <select id="selectByCategory1ID" resultType="com.sky.vo.SPUPageItemVO">
+        select a.id as spuId, a.spu_name as name, a.description as description
+        from spu as a
+                 join secondary_classification b
+                      on a.category2_id = b.id
+                 join primary_classification c
+                      on b.parent_id = c.id
+        where c.id = #{id1}
+    </select>
+    <select id="selectAll" resultType="com.sky.vo.SPUPageItemVO">
+    select SPU_NAME name,DESCRIPTION description, id spuId
+        from WZY.SPU
+
+
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        <selectKey resultType="java.lang.Integer" order="BEFORE" keyProperty="id">
+            SELECT SPU_SEQ.nextval FROM DUAL
+        </selectKey>
+        insert into spu(<include refid="base_column"></include>)
+        values (#{id},#{spuName},#{price},#{discount},#{storeCount},#{salesCount},#{picture},
+                #{description},#{isEffective},#{createTime},#{updateTime},#{isDeleted},#{category2Id})
+    </insert>
+
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into spu(<include refid="base_column_ex_id"></include>)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+        (#{entity.spuName},#{entity.price},#{entity.discount},#{entity.storeCount},
+         #{entity.salesCount},#{entity.picture},#{entity.description},#{entity.isEffective},
+         #{entity.createTime},#{entity.updateTime},#{entity.isDeleted},#{entity.category2Id})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into spu(<include refid="base_column"></include>)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.id},#{entity.spuName},#{entity.price},#{entity.discount},#{entity.storeCount},
+            #{entity.salesCount},#{entity.picture},#{entity.description},#{entity.isEffective},
+            #{entity.createTime},#{entity.updateTime},#{entity.isDeleted},#{entity.category2Id})
+        </foreach>
+        on duplicate key update
+        id=values(id)spu_name = values(spu_name)price = values(price)discount = values(discount)store_count =
+        values(store_count)sales_count = values(sales_count)picture = values(picture)description =
+        values(description)is_effective = values(is_effective)create_time = values(create_time)update_time =
+        values(update_time)is_deleted = values(is_deleted)
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update spu
+        <set>
+            <if test="spuName != null and spuName != ''">
+                spu_name = #{spuName},
+            </if>
+            <if test="price != null">
+                price = #{price},
+            </if>
+            <if test="discount != null">
+                discount = #{discount},
+            </if>
+            <if test="storeCount != null">
+                store_count = #{storeCount},
+            </if>
+            <if test="salesCount != null">
+                sales_count = #{salesCount},
+            </if>
+            <if test="picture != null and picture != ''">
+                picture = #{picture},
+            </if>
+            <if test="description != null and description != ''">
+                description = #{description},
+            </if>
+            <if test="isEffective != null and isEffective != ''">
+                is_effective = #{isEffective},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime},
+            </if>
+            <if test="isDeleted != null and isDeleted != ''">
+                is_deleted = #{isDeleted},
+            </if>
+            <if test="category2Id != null and category2Id != ''">
+                and category2_id = #{category2Id}
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+    <update id="setStatus">
+        update spu
+        <set>
+            is_effective=#{status}
+        </set>
+        where id=#{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from spu where id = #{id}
+    </delete>
+
+
+    <select id="getSpuPicturesList" resultType="java.lang.String">
+        select p.picture_url
+        from spu  s
+                 join spu_picture  p
+                      on s.id = p.spu_id
+        where s.id = #{spuId}
+
+    </select>
+</mapper>
+
