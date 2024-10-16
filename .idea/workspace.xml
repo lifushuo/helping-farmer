@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c482790e-57c6-4acb-b677-57fa928db8bb" name="更改" comment="第二次测试">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/系统需求/助农系统 1.0.BL1.数据库/数据库模型" beforeDir="false" afterPath="$PROJECT_DIR$/丰收宝盒1.0 configurationBL/助农系统 1.0.BL1.数据库/数据库模型" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/系统需求/规约文档/用例规约文档" beforeDir="false" afterPath="$PROJECT_DIR$/丰收宝盒1.0 configurationBL/规约文档/用例规约文档" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/系统测试/测试报告" beforeDir="false" afterPath="$PROJECT_DIR$/丰收宝盒 1.0 TestBL1 ST/测试报告" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/系统测试/测试计划" beforeDir="false" afterPath="$PROJECT_DIR$/丰收宝盒 1.0 TestBL1 ST/测试计划" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +33,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "true",
-    "git-widget-placeholder": "需求基线1",
+    "git-widget-placeholder": "测试基线1",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/helping-farmer2/系统设计与实施",
     "node.js.detected.package.eslint": "true",
