@@ -30,9 +30,15 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "true",
+<<<<<<< Updated upstream
     "git-widget-placeholder": "开发基线2",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "E:/SoftWare/Anaconda3/Scripts/conda.exe",
+=======
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/helping-farmer2/丰收宝盒 1.0 TestBL1 ST",
+>>>>>>> Stashed changes
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -42,6 +48,14 @@
   }
 }]]></component>
   <component name="RecentsManager">
+<<<<<<< Updated upstream
+=======
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\helping-farmer2\丰收宝盒 1.0 TestBL1 ST" />
+      <recent name="D:\helping-farmer2\系统设计与实施" />
+      <recent name="D:\helping-farmer2\系统需求\助农系统 1.0.BL1.数据库" />
+    </key>
+>>>>>>> Stashed changes
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\@Code\@python\GitHub\helping-farmer" />
     </key>
