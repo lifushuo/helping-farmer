@@ -1,0 +1,1 @@
+<view class="viewport"><view wx:if="{{a}}" class="list"><navigator url="/pagesMember/address/address" hover-class="none" class="item arrow"> 我的收货地址 </navigator></view><view wx:if="{{b}}" class="action"><view class="button" bindtap="{{c}}">退出登录</view></view></view>

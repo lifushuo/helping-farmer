@@ -1,0 +1,10 @@
+{
+  "navigationStyle": "custom",
+  "navigationBarTitleText": "首页",
+  "usingComponents": {
+    "custom-navbar": "./components/CustomNavbar",
+    "xtx-swiper": "../../components/XtxSwiper",
+    "page-skeleton": "./components/PageSkeleton",
+    "hot": "../hot/hot"
+  }
+}

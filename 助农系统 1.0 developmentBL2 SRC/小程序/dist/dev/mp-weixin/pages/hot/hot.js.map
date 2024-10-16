@@ -1,0 +1,1 @@
+{"version":3,"file":"hot.js","sources":["../../../../../uniPage:/cGFnZXMvaG90L2hvdC52dWU"],"sourcesContent":["import MiniProgramPage from 'D:/OneDrive/桌面/uniapp小程序小兔/erabbit-uni-app-vue3-ts-master/src/pages/hot/hot.vue'\nwx.createPage(MiniProgramPage)"],"names":["MiniProgramPage"],"mappings":";;;;;;;AACA,GAAG,WAAWA,IAAe,eAAA;"}

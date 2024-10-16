@@ -1,0 +1,1 @@
+<view class="navbar data-v-ff0d84a2" style="{{'padding-top:' + b}}"><uni-search-bar wx:if="{{a}}" class="data-v-ff0d84a2" u-i="ff0d84a2-0" bind:__l="__l" u-p="{{a}}"></uni-search-bar></view>
