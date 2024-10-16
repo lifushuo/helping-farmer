@@ -30,9 +30,15 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "true",
+<<<<<<< Updated upstream
     "git-widget-placeholder": "开发基线2",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "E:/SoftWare/Anaconda3/Scripts/conda.exe",
+=======
+    "git-widget-placeholder": "配置基线2",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/helping-farmer2/丰收宝盒1.0 configurationBL CM",
+>>>>>>> Stashed changes
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -56,6 +62,12 @@
       <updated>1726731043925</updated>
       <workItem from="1726731050435" duration="639000" />
       <workItem from="1728976219863" duration="68000" />
+<<<<<<< Updated upstream
+=======
+      <workItem from="1728982793192" duration="1022000" />
+      <workItem from="1729060031474" duration="2279000" />
+      <workItem from="1729069538596" duration="1176000" />
+>>>>>>> Stashed changes
     </task>
     <task id="LOCAL-00001" summary="测试文档提交">
       <option name="closed" value="true" />
