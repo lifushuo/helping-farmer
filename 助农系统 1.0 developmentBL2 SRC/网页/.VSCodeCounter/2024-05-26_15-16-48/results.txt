@@ -1,0 +1,227 @@
+Date : 2024-05-26 15:16:48
+Directory : e:\backWorkProject\backWork\src
+Total : 118 files,  38779 codes, 1048 comments, 816 blanks, all 40643 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| JSON       |          1 |     27,324 |          0 |          1 |     27,325 |
+| Vue        |         51 |      8,899 |        231 |        535 |      9,665 |
+| TypeScript |         53 |      2,190 |        805 |        251 |      3,246 |
+| XML        |         10 |        185 |          0 |          1 |        186 |
+| SCSS       |          3 |        181 |         12 |         28 |        221 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++----------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                   | files      | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                      |        118 |     38,779 |      1,048 |        816 |     40,643 |
+| . (Files)                                                                              |          5 |         83 |         40 |         11 |        134 |
+| api                                                                                    |         33 |      1,449 |        600 |        195 |      2,244 |
+| api (Files)                                                                            |          1 |         10 |          0 |          2 |         12 |
+| api\acl                                                                                |          6 |        202 |         54 |         15 |        271 |
+| api\acl\menu                                                                           |          2 |         49 |         12 |          5 |         66 |
+| api\acl\role                                                                           |          2 |         75 |         18 |          6 |         99 |
+| api\acl\user                                                                           |          2 |         78 |         24 |          4 |        106 |
+| api\employee                                                                           |          2 |         94 |         30 |         14 |        138 |
+| api\fcategory                                                                          |          2 |         72 |         15 |         12 |         99 |
+| api\orders                                                                             |          2 |        146 |        193 |         13 |        352 |
+| api\product                                                                            |          8 |        488 |         56 |         72 |        616 |
+| api\product\attr                                                                       |          2 |        103 |         14 |         14 |        131 |
+| api\product\sku                                                                        |          2 |        102 |          6 |         14 |        122 |
+| api\product\spu                                                                        |          2 |        212 |         21 |         34 |        267 |
+| api\product\trademark                                                                  |          2 |         71 |         15 |         10 |         96 |
+| api\production                                                                         |          6 |        268 |        172 |         46 |        486 |
+| api\production\attr                                                                    |          2 |         74 |         37 |         12 |        123 |
+| api\production\sku                                                                     |          2 |         89 |         66 |         16 |        171 |
+| api\production\spu                                                                     |          2 |        105 |         69 |         18 |        192 |
+| api\scategory                                                                          |          2 |         61 |         18 |          8 |         87 |
+| api\statistics                                                                         |          2 |         71 |         51 |          7 |        129 |
+| api\user                                                                               |          2 |         37 |         11 |          6 |         54 |
+| assets                                                                                 |         10 |        185 |          0 |          1 |        186 |
+| assets\icons                                                                           |         10 |        185 |          0 |          1 |        186 |
+| components                                                                             |          5 |        289 |         10 |         32 |        331 |
+| components (Files)                                                                     |          1 |         14 |          7 |          3 |         24 |
+| components\Category                                                                    |          1 |        108 |          0 |          7 |        115 |
+| components\HeadLable                                                                   |          1 |         89 |          0 |         12 |        101 |
+| components\InputAutoComplete                                                           |          1 |         48 |          1 |          6 |         55 |
+| components\Svgicon                                                                     |          1 |         30 |          2 |          4 |         36 |
+| directive                                                                              |          1 |         11 |          2 |          2 |         15 |
+| layout                                                                                 |          7 |        470 |         20 |         35 |        525 |
+| layout (Files)                                                                         |          1 |        105 |          6 |          9 |        120 |
+| layout\logo                                                                            |          1 |         23 |          0 |          2 |         25 |
+| layout\main                                                                            |          1 |         49 |          2 |          3 |         54 |
+| layout\menu                                                                            |          1 |         68 |          4 |          6 |         78 |
+| layout\tabbar                                                                          |          3 |        225 |          8 |         15 |        248 |
+| layout\tabbar (Files)                                                                  |          1 |         49 |          1 |          2 |         52 |
+| layout\tabbar\left_tabbar                                                              |          1 |         35 |          5 |          5 |         45 |
+| layout\tabbar\right_tabbar                                                             |          1 |        141 |          2 |          8 |        151 |
+| router                                                                                 |          2 |        257 |         61 |          7 |        325 |
+| store                                                                                  |          8 |        281 |         69 |         26 |        376 |
+| store (Files)                                                                          |          1 |          5 |          3 |          1 |          9 |
+| store\modules                                                                          |          6 |        258 |         65 |         21 |        344 |
+| store\types                                                                            |          1 |         18 |          1 |          4 |         23 |
+| styles                                                                                 |          3 |        181 |         12 |         28 |        221 |
+| utils                                                                                  |          4 |        108 |         26 |          9 |        143 |
+| views                                                                                  |         40 |     35,465 |        208 |        470 |     36,143 |
+| views\404                                                                              |          1 |         10 |          1 |          2 |         13 |
+| views\ad                                                                               |          3 |      1,009 |         14 |         21 |      1,044 |
+| views\ad\permission                                                                    |          1 |        163 |          3 |          6 |        172 |
+| views\ad\roler                                                                         |          1 |        357 |          4 |         10 |        371 |
+| views\ad\user                                                                          |          1 |        489 |          7 |          5 |        501 |
+| views\employee                                                                         |          2 |        540 |         11 |         31 |        582 |
+| views\home                                                                             |          1 |         57 |          0 |          7 |         64 |
+| views\login                                                                            |          1 |        162 |          0 |         11 |        173 |
+| views\operation                                                                        |          1 |        264 |          0 |          7 |        271 |
+| views\orders                                                                           |          1 |      1,141 |          8 |         47 |      1,196 |
+| views\product                                                                          |         12 |      3,262 |        173 |        219 |      3,654 |
+| views\product\FCategory                                                                |          1 |        355 |          4 |         19 |        378 |
+| views\product\SCategory                                                                |          1 |        367 |          4 |         18 |        389 |
+| views\product\attr                                                                     |          2 |        497 |         73 |         29 |        599 |
+| views\product\sku                                                                      |          3 |        671 |          0 |         49 |        720 |
+| views\product\spu                                                                      |          4 |      1,010 |         88 |         79 |      1,177 |
+| views\product\trademark                                                                |          1 |        362 |          4 |         25 |        391 |
+| views\screen                                                                           |         11 |     28,352 |          1 |         70 |     28,423 |
+| views\screen (Files)                                                                   |          1 |        120 |          1 |         12 |        133 |
+| views\screen\components                                                                |         10 |     28,232 |          0 |         58 |     28,290 |
+| views\screen\components\age                                                            |          1 |         94 |          0 |          4 |         98 |
+| views\screen\components\counter                                                        |          1 |        116 |          0 |         10 |        126 |
+| views\screen\components\line                                                           |          1 |         96 |          0 |          5 |        101 |
+| views\screen\components\map                                                            |          2 |     27,412 |          0 |          6 |     27,418 |
+| views\screen\components\rank                                                           |          1 |        118 |          0 |          4 |        122 |
+| views\screen\components\sex                                                            |          1 |        124 |          0 |          5 |        129 |
+| views\screen\components\top                                                            |          1 |         93 |          0 |         10 |        103 |
+| views\screen\components\tourist                                                        |          1 |        106 |          0 |          8 |        114 |
+| views\screen\components\year                                                           |          1 |         73 |          0 |          6 |         79 |
+| views\statistic                                                                        |          7 |        668 |          0 |         55 |        723 |
+| views\statistic\totaldata                                                              |          7 |        668 |          0 |         55 |        723 |
+| views\statistic\totaldata (Files)                                                      |          1 |        256 |          0 |         25 |        281 |
+| views\statistic\totaldata\component                                                    |          6 |        412 |          0 |         30 |        442 |
++----------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++----------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                               | language   | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| e:\backWorkProject\backWork\src\App.vue                                                | Vue        |         13 |          0 |          2 |         15 |
+| e:\backWorkProject\backWork\src\api\acl\menu\index.ts                                  | TypeScript |         19 |          8 |          3 |         30 |
+| e:\backWorkProject\backWork\src\api\acl\menu\type.ts                                   | TypeScript |         30 |          4 |          2 |         36 |
+| e:\backWorkProject\backWork\src\api\acl\role\index.ts                                  | TypeScript |         29 |         13 |          2 |         44 |
+| e:\backWorkProject\backWork\src\api\acl\role\type.ts                                   | TypeScript |         46 |          5 |          4 |         55 |
+| e:\backWorkProject\backWork\src\api\acl\user\index.ts                                  | TypeScript |         35 |         16 |          1 |         52 |
+| e:\backWorkProject\backWork\src\api\acl\user\type.ts                                   | TypeScript |         43 |          8 |          3 |         54 |
+| e:\backWorkProject\backWork\src\api\employee\index.ts                                  | TypeScript |         41 |          9 |          9 |         59 |
+| e:\backWorkProject\backWork\src\api\employee\type.ts                                   | TypeScript |         53 |         21 |          5 |         79 |
+| e:\backWorkProject\backWork\src\api\fcategory\index.ts                                 | TypeScript |         52 |          0 |          8 |         60 |
+| e:\backWorkProject\backWork\src\api\fcategory\type.ts                                  | TypeScript |         20 |         15 |          4 |         39 |
+| e:\backWorkProject\backWork\src\api\index.ts                                           | TypeScript |         10 |          0 |          2 |         12 |
+| e:\backWorkProject\backWork\src\api\orders\index.ts                                    | TypeScript |         68 |          4 |          8 |         80 |
+| e:\backWorkProject\backWork\src\api\orders\type.ts                                     | TypeScript |         78 |        189 |          5 |        272 |
+| e:\backWorkProject\backWork\src\api\product\attr\index.ts                              | TypeScript |         37 |         12 |          4 |         53 |
+| e:\backWorkProject\backWork\src\api\product\attr\type.ts                               | TypeScript |         66 |          2 |         10 |         78 |
+| e:\backWorkProject\backWork\src\api\product\sku\index.ts                               | TypeScript |         30 |          6 |          6 |         42 |
+| e:\backWorkProject\backWork\src\api\product\sku\type.ts                                | TypeScript |         72 |          0 |          8 |         80 |
+| e:\backWorkProject\backWork\src\api\product\spu\index.ts                               | TypeScript |         58 |         17 |         16 |         91 |
+| e:\backWorkProject\backWork\src\api\product\spu\type.ts                                | TypeScript |        154 |          4 |         18 |        176 |
+| e:\backWorkProject\backWork\src\api\product\trademark\index.ts                         | TypeScript |         38 |         14 |          7 |         59 |
+| e:\backWorkProject\backWork\src\api\product\trademark\type.ts                          | TypeScript |         33 |          1 |          3 |         37 |
+| e:\backWorkProject\backWork\src\api\production\attr\index.ts                           | TypeScript |         59 |         13 |          8 |         80 |
+| e:\backWorkProject\backWork\src\api\production\attr\type.ts                            | TypeScript |         15 |         24 |          4 |         43 |
+| e:\backWorkProject\backWork\src\api\production\sku\index.ts                            | TypeScript |         46 |          0 |         10 |         56 |
+| e:\backWorkProject\backWork\src\api\production\sku\type.ts                             | TypeScript |         43 |         66 |          6 |        115 |
+| e:\backWorkProject\backWork\src\api\production\spu\index.ts                            | TypeScript |         50 |          0 |          8 |         58 |
+| e:\backWorkProject\backWork\src\api\production\spu\type.ts                             | TypeScript |         55 |         69 |         10 |        134 |
+| e:\backWorkProject\backWork\src\api\scategory\index.ts                                 | TypeScript |         50 |          3 |          7 |         60 |
+| e:\backWorkProject\backWork\src\api\scategory\type.ts                                  | TypeScript |         11 |         15 |          1 |         27 |
+| e:\backWorkProject\backWork\src\api\statistics\index.ts                                | TypeScript |         46 |          0 |          3 |         49 |
+| e:\backWorkProject\backWork\src\api\statistics\type.ts                                 | TypeScript |         25 |         51 |          4 |         80 |
+| e:\backWorkProject\backWork\src\api\user\index.ts                                      | TypeScript |         16 |          6 |          3 |         25 |
+| e:\backWorkProject\backWork\src\api\user\type.ts                                       | TypeScript |         21 |          5 |          3 |         29 |
+| e:\backWorkProject\backWork\src\assets\icons\copyright.svg                             | XML        |          1 |          0 |          0 |          1 |
+| e:\backWorkProject\backWork\src\assets\icons\exit-full.svg                             | XML        |          1 |          0 |          0 |          1 |
+| e:\backWorkProject\backWork\src\assets\icons\full-screen.svg                           | XML        |          1 |          0 |          0 |          1 |
+| e:\backWorkProject\backWork\src\assets\icons\home.svg                                  | XML        |          1 |          0 |          0 |          1 |
+| e:\backWorkProject\backWork\src\assets\icons\loading.svg                               | XML        |          1 |          0 |          0 |          1 |
+| e:\backWorkProject\backWork\src\assets\icons\lock.svg                                  | XML        |          1 |          0 |          0 |          1 |
+| e:\backWorkProject\backWork\src\assets\icons\logout.svg                                | XML        |          1 |          0 |          0 |          1 |
+| e:\backWorkProject\backWork\src\assets\icons\phone.svg                                 | XML        |          1 |          0 |          0 |          1 |
+| e:\backWorkProject\backWork\src\assets\icons\refresh.svg                               | XML        |          1 |          0 |          0 |          1 |
+| e:\backWorkProject\backWork\src\assets\icons\welcome.svg                               | XML        |        176 |          0 |          1 |        177 |
+| e:\backWorkProject\backWork\src\components\Category\index.vue                          | Vue        |        108 |          0 |          7 |        115 |
+| e:\backWorkProject\backWork\src\components\HeadLable\index.vue                         | Vue        |         89 |          0 |         12 |        101 |
+| e:\backWorkProject\backWork\src\components\InputAutoComplete\index.vue                 | Vue        |         48 |          1 |          6 |         55 |
+| e:\backWorkProject\backWork\src\components\Svgicon\index.vue                           | Vue        |         30 |          2 |          4 |         36 |
+| e:\backWorkProject\backWork\src\components\index.ts                                    | TypeScript |         14 |          7 |          3 |         24 |
+| e:\backWorkProject\backWork\src\directive\has.ts                                       | TypeScript |         11 |          2 |          2 |         15 |
+| e:\backWorkProject\backWork\src\layout\index.vue                                       | Vue        |        105 |          6 |          9 |        120 |
+| e:\backWorkProject\backWork\src\layout\logo\index.vue                                  | Vue        |         23 |          0 |          2 |         25 |
+| e:\backWorkProject\backWork\src\layout\main\index.vue                                  | Vue        |         49 |          2 |          3 |         54 |
+| e:\backWorkProject\backWork\src\layout\menu\index.vue                                  | Vue        |         68 |          4 |          6 |         78 |
+| e:\backWorkProject\backWork\src\layout\tabbar\index.vue                                | Vue        |         49 |          1 |          2 |         52 |
+| e:\backWorkProject\backWork\src\layout\tabbar\left_tabbar\index.vue                    | Vue        |         35 |          5 |          5 |         45 |
+| e:\backWorkProject\backWork\src\layout\tabbar\right_tabbar\index.vue                   | Vue        |        141 |          2 |          8 |        151 |
+| e:\backWorkProject\backWork\src\main.ts                                                | TypeScript |         22 |          9 |          2 |         33 |
+| e:\backWorkProject\backWork\src\perimissiion.ts                                        | TypeScript |         43 |         29 |          5 |         77 |
+| e:\backWorkProject\backWork\src\router\index.ts                                        | TypeScript |         13 |          2 |          3 |         18 |
+| e:\backWorkProject\backWork\src\router\routes.ts                                       | TypeScript |        244 |         59 |          4 |        307 |
+| e:\backWorkProject\backWork\src\setting.ts                                             | TypeScript |          5 |          1 |          1 |          7 |
+| e:\backWorkProject\backWork\src\store\index.ts                                         | TypeScript |          5 |          3 |          1 |          9 |
+| e:\backWorkProject\backWork\src\store\modules\attr.ts                                  | TypeScript |         48 |          2 |          2 |         52 |
+| e:\backWorkProject\backWork\src\store\modules\category.ts                              | TypeScript |         56 |         10 |          3 |         69 |
+| e:\backWorkProject\backWork\src\store\modules\setting.ts                               | TypeScript |         10 |          2 |          2 |         14 |
+| e:\backWorkProject\backWork\src\store\modules\sku.ts                                   | TypeScript |         48 |          2 |          2 |         52 |
+| e:\backWorkProject\backWork\src\store\modules\spu.ts                                   | TypeScript |         38 |          5 |          3 |         46 |
+| e:\backWorkProject\backWork\src\store\modules\user.ts                                  | TypeScript |         58 |         44 |          9 |        111 |
+| e:\backWorkProject\backWork\src\store\types\type.ts                                    | TypeScript |         18 |          1 |          4 |         23 |
+| e:\backWorkProject\backWork\src\styles\index.scss                                      | SCSS       |         12 |          1 |          3 |         16 |
+| e:\backWorkProject\backWork\src\styles\reset.scss                                      | SCSS       |        164 |          5 |         21 |        190 |
+| e:\backWorkProject\backWork\src\styles\variable.scss                                   | SCSS       |          5 |          6 |          4 |         15 |
+| e:\backWorkProject\backWork\src\utils\request.ts                                       | TypeScript |         47 |         15 |          5 |         67 |
+| e:\backWorkProject\backWork\src\utils\request2.ts                                      | TypeScript |         38 |          6 |          2 |         46 |
+| e:\backWorkProject\backWork\src\utils\time.ts                                          | TypeScript |         14 |          2 |          1 |         17 |
+| e:\backWorkProject\backWork\src\utils\token.ts                                         | TypeScript |          9 |          3 |          1 |         13 |
+| e:\backWorkProject\backWork\src\views\404\index.vue                                    | Vue        |         10 |          1 |          2 |         13 |
+| e:\backWorkProject\backWork\src\views\ad\permission\index.vue                          | Vue        |        163 |          3 |          6 |        172 |
+| e:\backWorkProject\backWork\src\views\ad\roler\index.vue                               | Vue        |        357 |          4 |         10 |        371 |
+| e:\backWorkProject\backWork\src\views\ad\user\index.vue                                | Vue        |        489 |          7 |          5 |        501 |
+| e:\backWorkProject\backWork\src\views\employee\addEmployee.vue                         | Vue        |        323 |          9 |         18 |        350 |
+| e:\backWorkProject\backWork\src\views\employee\index.vue                               | Vue        |        217 |          2 |         13 |        232 |
+| e:\backWorkProject\backWork\src\views\home\index.vue                                   | Vue        |         57 |          0 |          7 |         64 |
+| e:\backWorkProject\backWork\src\views\login\index.vue                                  | Vue        |        162 |          0 |         11 |        173 |
+| e:\backWorkProject\backWork\src\views\operation\index.vue                              | Vue        |        264 |          0 |          7 |        271 |
+| e:\backWorkProject\backWork\src\views\orders\index.vue                                 | Vue        |      1,141 |          8 |         47 |      1,196 |
+| e:\backWorkProject\backWork\src\views\product\FCategory\index.vue                      | Vue        |        355 |          4 |         19 |        378 |
+| e:\backWorkProject\backWork\src\views\product\SCategory\index.vue                      | Vue        |        367 |          4 |         18 |        389 |
+| e:\backWorkProject\backWork\src\views\product\attr\attrCategory.vue                    | Vue        |        113 |          0 |         11 |        124 |
+| e:\backWorkProject\backWork\src\views\product\attr\index.vue                           | Vue        |        384 |         73 |         18 |        475 |
+| e:\backWorkProject\backWork\src\views\product\sku\index.vue                            | Vue        |        340 |          0 |         18 |        358 |
+| e:\backWorkProject\backWork\src\views\product\sku\skuCategory.vue                      | Vue        |        113 |          0 |         11 |        124 |
+| e:\backWorkProject\backWork\src\views\product\sku\skuForm.vue                          | Vue        |        218 |          0 |         20 |        238 |
+| e:\backWorkProject\backWork\src\views\product\spu\index.vue                            | Vue        |        359 |          0 |         27 |        386 |
+| e:\backWorkProject\backWork\src\views\product\spu\skuForm.vue                          | Vue        |        235 |          0 |         15 |        250 |
+| e:\backWorkProject\backWork\src\views\product\spu\spuCategory.vue                      | Vue        |         88 |          0 |         10 |         98 |
+| e:\backWorkProject\backWork\src\views\product\spu\spuForm.vue                          | Vue        |        328 |         88 |         27 |        443 |
+| e:\backWorkProject\backWork\src\views\product\trademark\index.vue                      | Vue        |        362 |          4 |         25 |        391 |
+| e:\backWorkProject\backWork\src\views\screen\components\age\index.vue                  | Vue        |         94 |          0 |          4 |         98 |
+| e:\backWorkProject\backWork\src\views\screen\components\counter\index.vue              | Vue        |        116 |          0 |         10 |        126 |
+| e:\backWorkProject\backWork\src\views\screen\components\line\index.vue                 | Vue        |         96 |          0 |          5 |        101 |
+| e:\backWorkProject\backWork\src\views\screen\components\map\china.json                 | JSON       |     27,324 |          0 |          1 |     27,325 |
+| e:\backWorkProject\backWork\src\views\screen\components\map\index.vue                  | Vue        |         88 |          0 |          5 |         93 |
+| e:\backWorkProject\backWork\src\views\screen\components\rank\index.vue                 | Vue        |        118 |          0 |          4 |        122 |
+| e:\backWorkProject\backWork\src\views\screen\components\sex\index.vue                  | Vue        |        124 |          0 |          5 |        129 |
+| e:\backWorkProject\backWork\src\views\screen\components\top\index.vue                  | Vue        |         93 |          0 |         10 |        103 |
+| e:\backWorkProject\backWork\src\views\screen\components\tourist\index.vue              | Vue        |        106 |          0 |          8 |        114 |
+| e:\backWorkProject\backWork\src\views\screen\components\year\index.vue                 | Vue        |         73 |          0 |          6 |         79 |
+| e:\backWorkProject\backWork\src\views\screen\index.vue                                 | Vue        |        120 |          1 |         12 |        133 |
+| e:\backWorkProject\backWork\src\views\statistic\totaldata\component\moneyStatistic.vue | Vue        |         67 |          0 |          9 |         76 |
+| e:\backWorkProject\backWork\src\views\statistic\totaldata\component\orderStatistic.vue | Vue        |         74 |          0 |          6 |         80 |
+| e:\backWorkProject\backWork\src\views\statistic\totaldata\component\skuTop10.vue       | Vue        |         68 |          0 |          3 |         71 |
+| e:\backWorkProject\backWork\src\views\statistic\totaldata\component\spuTop10.vue       | Vue        |         68 |          0 |          4 |         72 |
+| e:\backWorkProject\backWork\src\views\statistic\totaldata\component\top10.vue          | Vue        |         68 |          0 |          2 |         70 |
+| e:\backWorkProject\backWork\src\views\statistic\totaldata\component\userStatistic.vue  | Vue        |         67 |          0 |          6 |         73 |
+| e:\backWorkProject\backWork\src\views\statistic\totaldata\index.vue                    | Vue        |        256 |          0 |         25 |        281 |
+| e:\backWorkProject\backWork\src\vite-env.d.ts                                          | TypeScript |          0 |          1 |          1 |          2 |
+| Total                                                                                  |            |     38,779 |      1,048 |        816 |     40,643 |
++----------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+

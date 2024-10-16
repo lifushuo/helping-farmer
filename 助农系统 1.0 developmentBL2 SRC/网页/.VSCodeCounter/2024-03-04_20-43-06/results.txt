@@ -1,0 +1,106 @@
+Date : 2024-03-04 20:43:06
+Directory : d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src
+Total : 44 files,  1178 codes, 97 comments, 112 blanks, all 1387 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| Vue        |         18 |        472 |         16 |         52 |        540 |
+| TypeScript |         13 |        341 |         69 |         31 |        441 |
+| XML        |         10 |        185 |          0 |          1 |        186 |
+| SCSS       |          3 |        180 |         12 |         28 |        220 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++----------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                         | files      | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                            |         44 |      1,178 |         97 |        112 |      1,387 |
+| . (Files)                                                                                    |          3 |         38 |          6 |          5 |         49 |
+| api                                                                                          |          2 |         40 |          8 |          8 |         56 |
+| api\user                                                                                     |          2 |         40 |          8 |          8 |         56 |
+| assets                                                                                       |         10 |        185 |          0 |          1 |        186 |
+| assets\icons                                                                                 |         10 |        185 |          0 |          1 |        186 |
+| components                                                                                   |          2 |         43 |          9 |          8 |         60 |
+| components (Files)                                                                           |          1 |         13 |          7 |          4 |         24 |
+| components\Svgicon                                                                           |          1 |         30 |          2 |          4 |         36 |
+| layout                                                                                       |          5 |        203 |         14 |         14 |        231 |
+| layout (Files)                                                                               |          1 |         73 |          6 |          4 |         83 |
+| layout\logo                                                                                  |          1 |         20 |          0 |          2 |         22 |
+| layout\main                                                                                  |          1 |         25 |          2 |          2 |         29 |
+| layout\menu                                                                                  |          1 |         61 |          4 |          5 |         70 |
+| layout\tabbar                                                                                |          1 |         24 |          2 |          1 |         27 |
+| router                                                                                       |          2 |        170 |         11 |          5 |        186 |
+| store                                                                                        |          3 |         38 |         17 |          6 |         61 |
+| store (Files)                                                                                |          1 |          5 |          3 |          2 |         10 |
+| store\modules                                                                                |          1 |         28 |         13 |          3 |         44 |
+| store\types                                                                                  |          1 |          5 |          1 |          1 |          7 |
+| styles                                                                                       |          3 |        180 |         12 |         28 |        220 |
+| utils                                                                                        |          3 |         62 |         20 |          6 |         88 |
+| views                                                                                        |         11 |        219 |          0 |         31 |        250 |
+| views\404                                                                                    |          1 |          5 |          0 |          2 |          7 |
+| views\ad                                                                                     |          3 |         21 |          0 |          6 |         27 |
+| views\ad\permission                                                                          |          1 |          5 |          0 |          2 |          7 |
+| views\ad\roler                                                                               |          1 |          5 |          0 |          2 |          7 |
+| views\ad\user                                                                                |          1 |         11 |          0 |          2 |         13 |
+| views\home                                                                                   |          1 |          5 |          0 |          3 |          8 |
+| views\login                                                                                  |          1 |        155 |          0 |         10 |        165 |
+| views\product                                                                                |          4 |         28 |          0 |          8 |         36 |
+| views\product\attr                                                                           |          1 |          7 |          0 |          2 |          9 |
+| views\product\sku                                                                            |          1 |          7 |          0 |          2 |          9 |
+| views\product\spu                                                                            |          1 |          7 |          0 |          2 |          9 |
+| views\product\trademark                                                                      |          1 |          7 |          0 |          2 |          9 |
+| views\screen                                                                                 |          1 |          5 |          0 |          2 |          7 |
++----------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++----------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                     | language   | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\App.vue                           | Vue        |         20 |          0 |          3 |         23 |
+| d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\api\user\index.ts                 | TypeScript |         10 |          5 |          3 |         18 |
+| d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\api\user\type.ts                  | TypeScript |         30 |          3 |          5 |         38 |
+| d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\assets\icons\copyright.svg        | XML        |          1 |          0 |          0 |          1 |
+| d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\assets\icons\exit-full.svg        | XML        |          1 |          0 |          0 |          1 |
+| d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\assets\icons\full-screen.svg      | XML        |          1 |          0 |          0 |          1 |
+| d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\assets\icons\home.svg             | XML        |          1 |          0 |          0 |          1 |
+| d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\assets\icons\loading.svg          | XML        |          1 |          0 |          0 |          1 |
+| d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\assets\icons\lock.svg             | XML        |          1 |          0 |          0 |          1 |
+| d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\assets\icons\logout.svg           | XML        |          1 |          0 |          0 |          1 |
+| d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\assets\icons\phone.svg            | XML        |          1 |          0 |          0 |          1 |
+| d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\assets\icons\refresh.svg          | XML        |          1 |          0 |          0 |          1 |
+| d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\assets\icons\welcome.svg          | XML        |        176 |          0 |          1 |        177 |
+| d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\components\Svgicon\index.vue      | Vue        |         30 |          2 |          4 |         36 |
+| d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\components\index.ts               | TypeScript |         13 |          7 |          4 |         24 |
+| d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\layout\index.vue                  | Vue        |         73 |          6 |          4 |         83 |
+| d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\layout\logo\index.vue             | Vue        |         20 |          0 |          2 |         22 |
+| d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\layout\main\index.vue             | Vue        |         25 |          2 |          2 |         29 |
+| d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\layout\menu\index.vue             | Vue        |         61 |          4 |          5 |         70 |
+| d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\layout\tabbar\index.vue           | Vue        |         24 |          2 |          1 |         27 |
+| d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\main.ts                           | TypeScript |         18 |          5 |          1 |         24 |
+| d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\router\index.ts                   | TypeScript |         13 |          2 |          3 |         18 |
+| d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\router\routes.ts                  | TypeScript |        157 |          9 |          2 |        168 |
+| d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\store\index.ts                    | TypeScript |          5 |          3 |          2 |         10 |
+| d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\store\modules\user.ts             | TypeScript |         28 |         13 |          3 |         44 |
+| d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\store\types\type.ts               | TypeScript |          5 |          1 |          1 |          7 |
+| d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\styles\index.scss                 | SCSS       |         12 |          1 |          3 |         16 |
+| d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\styles\reset.scss                 | SCSS       |        164 |          5 |         21 |        190 |
+| d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\styles\variable.scss              | SCSS       |          4 |          6 |          4 |         14 |
+| d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\utils\request.ts                  | TypeScript |         42 |         15 |          4 |         61 |
+| d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\utils\time.ts                     | TypeScript |         14 |          2 |          1 |         17 |
+| d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\utils\token.ts                    | TypeScript |          6 |          3 |          1 |         10 |
+| d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\views\404\index.vue               | Vue        |          5 |          0 |          2 |          7 |
+| d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\views\ad\permission\index.vue     | Vue        |          5 |          0 |          2 |          7 |
+| d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\views\ad\roler\index.vue          | Vue        |          5 |          0 |          2 |          7 |
+| d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\views\ad\user\index.vue           | Vue        |         11 |          0 |          2 |         13 |
+| d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\views\home\index.vue              | Vue        |          5 |          0 |          3 |          8 |
+| d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\views\login\index.vue             | Vue        |        155 |          0 |         10 |        165 |
+| d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\views\product\attr\index.vue      | Vue        |          7 |          0 |          2 |          9 |
+| d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\views\product\sku\index.vue       | Vue        |          7 |          0 |          2 |          9 |
+| d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\views\product\spu\index.vue       | Vue        |          7 |          0 |          2 |          9 |
+| d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\views\product\trademark\index.vue | Vue        |          7 |          0 |          2 |          9 |
+| d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\views\screen\index.vue            | Vue        |          5 |          0 |          2 |          7 |
+| d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\vite-env.d.ts                     | TypeScript |          0 |          1 |          1 |          2 |
+| Total                                                                                        |            |      1,178 |         97 |        112 |      1,387 |
++----------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+

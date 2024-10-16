@@ -1,0 +1,133 @@
+# Details
+
+Date : 2024-05-26 15:16:48
+
+Directory e:\\backWorkProject\\backWork\\src
+
+Total : 118 files,  38779 codes, 1048 comments, 816 blanks, all 40643 lines
+
+[Summary](results.md) / Details / [Diff Summary](diff.md) / [Diff Details](diff-details.md)
+
+## Files
+| filename | language | code | comment | blank | total |
+| :--- | :--- | ---: | ---: | ---: | ---: |
+| [src/App.vue](/src/App.vue) | Vue | 13 | 0 | 2 | 15 |
+| [src/api/acl/menu/index.ts](/src/api/acl/menu/index.ts) | TypeScript | 19 | 8 | 3 | 30 |
+| [src/api/acl/menu/type.ts](/src/api/acl/menu/type.ts) | TypeScript | 30 | 4 | 2 | 36 |
+| [src/api/acl/role/index.ts](/src/api/acl/role/index.ts) | TypeScript | 29 | 13 | 2 | 44 |
+| [src/api/acl/role/type.ts](/src/api/acl/role/type.ts) | TypeScript | 46 | 5 | 4 | 55 |
+| [src/api/acl/user/index.ts](/src/api/acl/user/index.ts) | TypeScript | 35 | 16 | 1 | 52 |
+| [src/api/acl/user/type.ts](/src/api/acl/user/type.ts) | TypeScript | 43 | 8 | 3 | 54 |
+| [src/api/employee/index.ts](/src/api/employee/index.ts) | TypeScript | 41 | 9 | 9 | 59 |
+| [src/api/employee/type.ts](/src/api/employee/type.ts) | TypeScript | 53 | 21 | 5 | 79 |
+| [src/api/fcategory/index.ts](/src/api/fcategory/index.ts) | TypeScript | 52 | 0 | 8 | 60 |
+| [src/api/fcategory/type.ts](/src/api/fcategory/type.ts) | TypeScript | 20 | 15 | 4 | 39 |
+| [src/api/index.ts](/src/api/index.ts) | TypeScript | 10 | 0 | 2 | 12 |
+| [src/api/orders/index.ts](/src/api/orders/index.ts) | TypeScript | 68 | 4 | 8 | 80 |
+| [src/api/orders/type.ts](/src/api/orders/type.ts) | TypeScript | 78 | 189 | 5 | 272 |
+| [src/api/product/attr/index.ts](/src/api/product/attr/index.ts) | TypeScript | 37 | 12 | 4 | 53 |
+| [src/api/product/attr/type.ts](/src/api/product/attr/type.ts) | TypeScript | 66 | 2 | 10 | 78 |
+| [src/api/product/sku/index.ts](/src/api/product/sku/index.ts) | TypeScript | 30 | 6 | 6 | 42 |
+| [src/api/product/sku/type.ts](/src/api/product/sku/type.ts) | TypeScript | 72 | 0 | 8 | 80 |
+| [src/api/product/spu/index.ts](/src/api/product/spu/index.ts) | TypeScript | 58 | 17 | 16 | 91 |
+| [src/api/product/spu/type.ts](/src/api/product/spu/type.ts) | TypeScript | 154 | 4 | 18 | 176 |
+| [src/api/product/trademark/index.ts](/src/api/product/trademark/index.ts) | TypeScript | 38 | 14 | 7 | 59 |
+| [src/api/product/trademark/type.ts](/src/api/product/trademark/type.ts) | TypeScript | 33 | 1 | 3 | 37 |
+| [src/api/production/attr/index.ts](/src/api/production/attr/index.ts) | TypeScript | 59 | 13 | 8 | 80 |
+| [src/api/production/attr/type.ts](/src/api/production/attr/type.ts) | TypeScript | 15 | 24 | 4 | 43 |
+| [src/api/production/sku/index.ts](/src/api/production/sku/index.ts) | TypeScript | 46 | 0 | 10 | 56 |
+| [src/api/production/sku/type.ts](/src/api/production/sku/type.ts) | TypeScript | 43 | 66 | 6 | 115 |
+| [src/api/production/spu/index.ts](/src/api/production/spu/index.ts) | TypeScript | 50 | 0 | 8 | 58 |
+| [src/api/production/spu/type.ts](/src/api/production/spu/type.ts) | TypeScript | 55 | 69 | 10 | 134 |
+| [src/api/scategory/index.ts](/src/api/scategory/index.ts) | TypeScript | 50 | 3 | 7 | 60 |
+| [src/api/scategory/type.ts](/src/api/scategory/type.ts) | TypeScript | 11 | 15 | 1 | 27 |
+| [src/api/statistics/index.ts](/src/api/statistics/index.ts) | TypeScript | 46 | 0 | 3 | 49 |
+| [src/api/statistics/type.ts](/src/api/statistics/type.ts) | TypeScript | 25 | 51 | 4 | 80 |
+| [src/api/user/index.ts](/src/api/user/index.ts) | TypeScript | 16 | 6 | 3 | 25 |
+| [src/api/user/type.ts](/src/api/user/type.ts) | TypeScript | 21 | 5 | 3 | 29 |
+| [src/assets/icons/copyright.svg](/src/assets/icons/copyright.svg) | XML | 1 | 0 | 0 | 1 |
+| [src/assets/icons/exit-full.svg](/src/assets/icons/exit-full.svg) | XML | 1 | 0 | 0 | 1 |
+| [src/assets/icons/full-screen.svg](/src/assets/icons/full-screen.svg) | XML | 1 | 0 | 0 | 1 |
+| [src/assets/icons/home.svg](/src/assets/icons/home.svg) | XML | 1 | 0 | 0 | 1 |
+| [src/assets/icons/loading.svg](/src/assets/icons/loading.svg) | XML | 1 | 0 | 0 | 1 |
+| [src/assets/icons/lock.svg](/src/assets/icons/lock.svg) | XML | 1 | 0 | 0 | 1 |
+| [src/assets/icons/logout.svg](/src/assets/icons/logout.svg) | XML | 1 | 0 | 0 | 1 |
+| [src/assets/icons/phone.svg](/src/assets/icons/phone.svg) | XML | 1 | 0 | 0 | 1 |
+| [src/assets/icons/refresh.svg](/src/assets/icons/refresh.svg) | XML | 1 | 0 | 0 | 1 |
+| [src/assets/icons/welcome.svg](/src/assets/icons/welcome.svg) | XML | 176 | 0 | 1 | 177 |
+| [src/components/Category/index.vue](/src/components/Category/index.vue) | Vue | 108 | 0 | 7 | 115 |
+| [src/components/HeadLable/index.vue](/src/components/HeadLable/index.vue) | Vue | 89 | 0 | 12 | 101 |
+| [src/components/InputAutoComplete/index.vue](/src/components/InputAutoComplete/index.vue) | Vue | 48 | 1 | 6 | 55 |
+| [src/components/Svgicon/index.vue](/src/components/Svgicon/index.vue) | Vue | 30 | 2 | 4 | 36 |
+| [src/components/index.ts](/src/components/index.ts) | TypeScript | 14 | 7 | 3 | 24 |
+| [src/directive/has.ts](/src/directive/has.ts) | TypeScript | 11 | 2 | 2 | 15 |
+| [src/layout/index.vue](/src/layout/index.vue) | Vue | 105 | 6 | 9 | 120 |
+| [src/layout/logo/index.vue](/src/layout/logo/index.vue) | Vue | 23 | 0 | 2 | 25 |
+| [src/layout/main/index.vue](/src/layout/main/index.vue) | Vue | 49 | 2 | 3 | 54 |
+| [src/layout/menu/index.vue](/src/layout/menu/index.vue) | Vue | 68 | 4 | 6 | 78 |
+| [src/layout/tabbar/index.vue](/src/layout/tabbar/index.vue) | Vue | 49 | 1 | 2 | 52 |
+| [src/layout/tabbar/left_tabbar/index.vue](/src/layout/tabbar/left_tabbar/index.vue) | Vue | 35 | 5 | 5 | 45 |
+| [src/layout/tabbar/right_tabbar/index.vue](/src/layout/tabbar/right_tabbar/index.vue) | Vue | 141 | 2 | 8 | 151 |
+| [src/main.ts](/src/main.ts) | TypeScript | 22 | 9 | 2 | 33 |
+| [src/perimissiion.ts](/src/perimissiion.ts) | TypeScript | 43 | 29 | 5 | 77 |
+| [src/router/index.ts](/src/router/index.ts) | TypeScript | 13 | 2 | 3 | 18 |
+| [src/router/routes.ts](/src/router/routes.ts) | TypeScript | 244 | 59 | 4 | 307 |
+| [src/setting.ts](/src/setting.ts) | TypeScript | 5 | 1 | 1 | 7 |
+| [src/store/index.ts](/src/store/index.ts) | TypeScript | 5 | 3 | 1 | 9 |
+| [src/store/modules/attr.ts](/src/store/modules/attr.ts) | TypeScript | 48 | 2 | 2 | 52 |
+| [src/store/modules/category.ts](/src/store/modules/category.ts) | TypeScript | 56 | 10 | 3 | 69 |
+| [src/store/modules/setting.ts](/src/store/modules/setting.ts) | TypeScript | 10 | 2 | 2 | 14 |
+| [src/store/modules/sku.ts](/src/store/modules/sku.ts) | TypeScript | 48 | 2 | 2 | 52 |
+| [src/store/modules/spu.ts](/src/store/modules/spu.ts) | TypeScript | 38 | 5 | 3 | 46 |
+| [src/store/modules/user.ts](/src/store/modules/user.ts) | TypeScript | 58 | 44 | 9 | 111 |
+| [src/store/types/type.ts](/src/store/types/type.ts) | TypeScript | 18 | 1 | 4 | 23 |
+| [src/styles/index.scss](/src/styles/index.scss) | SCSS | 12 | 1 | 3 | 16 |
+| [src/styles/reset.scss](/src/styles/reset.scss) | SCSS | 164 | 5 | 21 | 190 |
+| [src/styles/variable.scss](/src/styles/variable.scss) | SCSS | 5 | 6 | 4 | 15 |
+| [src/utils/request.ts](/src/utils/request.ts) | TypeScript | 47 | 15 | 5 | 67 |
+| [src/utils/request2.ts](/src/utils/request2.ts) | TypeScript | 38 | 6 | 2 | 46 |
+| [src/utils/time.ts](/src/utils/time.ts) | TypeScript | 14 | 2 | 1 | 17 |
+| [src/utils/token.ts](/src/utils/token.ts) | TypeScript | 9 | 3 | 1 | 13 |
+| [src/views/404/index.vue](/src/views/404/index.vue) | Vue | 10 | 1 | 2 | 13 |
+| [src/views/ad/permission/index.vue](/src/views/ad/permission/index.vue) | Vue | 163 | 3 | 6 | 172 |
+| [src/views/ad/roler/index.vue](/src/views/ad/roler/index.vue) | Vue | 357 | 4 | 10 | 371 |
+| [src/views/ad/user/index.vue](/src/views/ad/user/index.vue) | Vue | 489 | 7 | 5 | 501 |
+| [src/views/employee/addEmployee.vue](/src/views/employee/addEmployee.vue) | Vue | 323 | 9 | 18 | 350 |
+| [src/views/employee/index.vue](/src/views/employee/index.vue) | Vue | 217 | 2 | 13 | 232 |
+| [src/views/home/index.vue](/src/views/home/index.vue) | Vue | 57 | 0 | 7 | 64 |
+| [src/views/login/index.vue](/src/views/login/index.vue) | Vue | 162 | 0 | 11 | 173 |
+| [src/views/operation/index.vue](/src/views/operation/index.vue) | Vue | 264 | 0 | 7 | 271 |
+| [src/views/orders/index.vue](/src/views/orders/index.vue) | Vue | 1,141 | 8 | 47 | 1,196 |
+| [src/views/product/FCategory/index.vue](/src/views/product/FCategory/index.vue) | Vue | 355 | 4 | 19 | 378 |
+| [src/views/product/SCategory/index.vue](/src/views/product/SCategory/index.vue) | Vue | 367 | 4 | 18 | 389 |
+| [src/views/product/attr/attrCategory.vue](/src/views/product/attr/attrCategory.vue) | Vue | 113 | 0 | 11 | 124 |
+| [src/views/product/attr/index.vue](/src/views/product/attr/index.vue) | Vue | 384 | 73 | 18 | 475 |
+| [src/views/product/sku/index.vue](/src/views/product/sku/index.vue) | Vue | 340 | 0 | 18 | 358 |
+| [src/views/product/sku/skuCategory.vue](/src/views/product/sku/skuCategory.vue) | Vue | 113 | 0 | 11 | 124 |
+| [src/views/product/sku/skuForm.vue](/src/views/product/sku/skuForm.vue) | Vue | 218 | 0 | 20 | 238 |
+| [src/views/product/spu/index.vue](/src/views/product/spu/index.vue) | Vue | 359 | 0 | 27 | 386 |
+| [src/views/product/spu/skuForm.vue](/src/views/product/spu/skuForm.vue) | Vue | 235 | 0 | 15 | 250 |
+| [src/views/product/spu/spuCategory.vue](/src/views/product/spu/spuCategory.vue) | Vue | 88 | 0 | 10 | 98 |
+| [src/views/product/spu/spuForm.vue](/src/views/product/spu/spuForm.vue) | Vue | 328 | 88 | 27 | 443 |
+| [src/views/product/trademark/index.vue](/src/views/product/trademark/index.vue) | Vue | 362 | 4 | 25 | 391 |
+| [src/views/screen/components/age/index.vue](/src/views/screen/components/age/index.vue) | Vue | 94 | 0 | 4 | 98 |
+| [src/views/screen/components/counter/index.vue](/src/views/screen/components/counter/index.vue) | Vue | 116 | 0 | 10 | 126 |
+| [src/views/screen/components/line/index.vue](/src/views/screen/components/line/index.vue) | Vue | 96 | 0 | 5 | 101 |
+| [src/views/screen/components/map/china.json](/src/views/screen/components/map/china.json) | JSON | 27,324 | 0 | 1 | 27,325 |
+| [src/views/screen/components/map/index.vue](/src/views/screen/components/map/index.vue) | Vue | 88 | 0 | 5 | 93 |
+| [src/views/screen/components/rank/index.vue](/src/views/screen/components/rank/index.vue) | Vue | 118 | 0 | 4 | 122 |
+| [src/views/screen/components/sex/index.vue](/src/views/screen/components/sex/index.vue) | Vue | 124 | 0 | 5 | 129 |
+| [src/views/screen/components/top/index.vue](/src/views/screen/components/top/index.vue) | Vue | 93 | 0 | 10 | 103 |
+| [src/views/screen/components/tourist/index.vue](/src/views/screen/components/tourist/index.vue) | Vue | 106 | 0 | 8 | 114 |
+| [src/views/screen/components/year/index.vue](/src/views/screen/components/year/index.vue) | Vue | 73 | 0 | 6 | 79 |
+| [src/views/screen/index.vue](/src/views/screen/index.vue) | Vue | 120 | 1 | 12 | 133 |
+| [src/views/statistic/totaldata/component/moneyStatistic.vue](/src/views/statistic/totaldata/component/moneyStatistic.vue) | Vue | 67 | 0 | 9 | 76 |
+| [src/views/statistic/totaldata/component/orderStatistic.vue](/src/views/statistic/totaldata/component/orderStatistic.vue) | Vue | 74 | 0 | 6 | 80 |
+| [src/views/statistic/totaldata/component/skuTop10.vue](/src/views/statistic/totaldata/component/skuTop10.vue) | Vue | 68 | 0 | 3 | 71 |
+| [src/views/statistic/totaldata/component/spuTop10.vue](/src/views/statistic/totaldata/component/spuTop10.vue) | Vue | 68 | 0 | 4 | 72 |
+| [src/views/statistic/totaldata/component/top10.vue](/src/views/statistic/totaldata/component/top10.vue) | Vue | 68 | 0 | 2 | 70 |
+| [src/views/statistic/totaldata/component/userStatistic.vue](/src/views/statistic/totaldata/component/userStatistic.vue) | Vue | 67 | 0 | 6 | 73 |
+| [src/views/statistic/totaldata/index.vue](/src/views/statistic/totaldata/index.vue) | Vue | 256 | 0 | 25 | 281 |
+| [src/vite-env.d.ts](/src/vite-env.d.ts) | TypeScript | 0 | 1 | 1 | 2 |
+
+[Summary](results.md) / Details / [Diff Summary](diff.md) / [Diff Details](diff-details.md)

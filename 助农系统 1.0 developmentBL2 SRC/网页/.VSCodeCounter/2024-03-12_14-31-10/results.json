@@ -1,0 +1,356 @@
+{
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/vite-env.d.ts": {
+        "language": "TypeScript",
+        "code": 0,
+        "comment": 1,
+        "blank": 1
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/views/screen/index.vue": {
+        "language": "Vue",
+        "code": 5,
+        "comment": 0,
+        "blank": 2
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/views/product/spu/spuForm.vue": {
+        "language": "Vue",
+        "code": 139,
+        "comment": 0,
+        "blank": 11
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/views/product/spu/skuForm.vue": {
+        "language": "Vue",
+        "code": 5,
+        "comment": 0,
+        "blank": 3
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/views/product/sku/index.vue": {
+        "language": "Vue",
+        "code": 7,
+        "comment": 0,
+        "blank": 2
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/views/home/index.vue": {
+        "language": "Vue",
+        "code": 13,
+        "comment": 0,
+        "blank": 5
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/views/product/spu/index.vue": {
+        "language": "Vue",
+        "code": 157,
+        "comment": 0,
+        "blank": 9
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/views/product/trademark/index.vue": {
+        "language": "Vue",
+        "code": 359,
+        "comment": 4,
+        "blank": 25
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/views/ad/user/index.vue": {
+        "language": "Vue",
+        "code": 16,
+        "comment": 0,
+        "blank": 3
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/views/ad/roler/index.vue": {
+        "language": "Vue",
+        "code": 5,
+        "comment": 0,
+        "blank": 2
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/views/ad/permission/index.vue": {
+        "language": "Vue",
+        "code": 5,
+        "comment": 0,
+        "blank": 2
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/views/product/attr/index.vue": {
+        "language": "Vue",
+        "code": 285,
+        "comment": 1,
+        "blank": 13
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/views/login/index.vue": {
+        "language": "Vue",
+        "code": 158,
+        "comment": 0,
+        "blank": 11
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/utils/token.ts": {
+        "language": "TypeScript",
+        "code": 9,
+        "comment": 3,
+        "blank": 1
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/views/404/index.vue": {
+        "language": "Vue",
+        "code": 5,
+        "comment": 0,
+        "blank": 2
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/styles/variable.scss": {
+        "language": "SCSS",
+        "code": 5,
+        "comment": 6,
+        "blank": 4
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/styles/index.scss": {
+        "language": "SCSS",
+        "code": 12,
+        "comment": 1,
+        "blank": 3
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/utils/time.ts": {
+        "language": "TypeScript",
+        "code": 14,
+        "comment": 2,
+        "blank": 1
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/store/types/type.ts": {
+        "language": "TypeScript",
+        "code": 7,
+        "comment": 1,
+        "blank": 2
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/utils/request.ts": {
+        "language": "TypeScript",
+        "code": 47,
+        "comment": 15,
+        "blank": 5
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/styles/reset.scss": {
+        "language": "SCSS",
+        "code": 164,
+        "comment": 5,
+        "blank": 21
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/store/modules/setting.ts": {
+        "language": "TypeScript",
+        "code": 10,
+        "comment": 2,
+        "blank": 2
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/store/modules/user.ts": {
+        "language": "TypeScript",
+        "code": 56,
+        "comment": 19,
+        "blank": 3
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/store/modules/category.ts": {
+        "language": "TypeScript",
+        "code": 56,
+        "comment": 10,
+        "blank": 3
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/store/index.ts": {
+        "language": "TypeScript",
+        "code": 5,
+        "comment": 3,
+        "blank": 1
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/setting.ts": {
+        "language": "TypeScript",
+        "code": 5,
+        "comment": 1,
+        "blank": 1
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/router/routes.ts": {
+        "language": "TypeScript",
+        "code": 158,
+        "comment": 10,
+        "blank": 2
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/router/index.ts": {
+        "language": "TypeScript",
+        "code": 13,
+        "comment": 2,
+        "blank": 3
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/main.ts": {
+        "language": "TypeScript",
+        "code": 19,
+        "comment": 5,
+        "blank": 1
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/perimissiion.ts": {
+        "language": "TypeScript",
+        "code": 42,
+        "comment": 24,
+        "blank": 6
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/layout/tabbar/right_tabbar/index.vue": {
+        "language": "Vue",
+        "code": 84,
+        "comment": 2,
+        "blank": 5
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/layout/main/index.vue": {
+        "language": "Vue",
+        "code": 51,
+        "comment": 2,
+        "blank": 2
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/layout/logo/index.vue": {
+        "language": "Vue",
+        "code": 23,
+        "comment": 0,
+        "blank": 2
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/layout/tabbar/left_tabbar/index.vue": {
+        "language": "Vue",
+        "code": 35,
+        "comment": 5,
+        "blank": 5
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/layout/tabbar/index.vue": {
+        "language": "Vue",
+        "code": 49,
+        "comment": 1,
+        "blank": 2
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/layout/index.vue": {
+        "language": "Vue",
+        "code": 105,
+        "comment": 6,
+        "blank": 9
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/components/Svgicon/index.vue": {
+        "language": "Vue",
+        "code": 30,
+        "comment": 2,
+        "blank": 4
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/components/Category/index.vue": {
+        "language": "Vue",
+        "code": 108,
+        "comment": 0,
+        "blank": 7
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/components/index.ts": {
+        "language": "TypeScript",
+        "code": 14,
+        "comment": 7,
+        "blank": 3
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/layout/menu/index.vue": {
+        "language": "Vue",
+        "code": 70,
+        "comment": 4,
+        "blank": 6
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/assets/icons/phone.svg": {
+        "language": "XML",
+        "code": 1,
+        "comment": 0,
+        "blank": 0
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/assets/icons/refresh.svg": {
+        "language": "XML",
+        "code": 1,
+        "comment": 0,
+        "blank": 0
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/assets/icons/logout.svg": {
+        "language": "XML",
+        "code": 1,
+        "comment": 0,
+        "blank": 0
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/assets/icons/welcome.svg": {
+        "language": "XML",
+        "code": 176,
+        "comment": 0,
+        "blank": 1
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/assets/icons/home.svg": {
+        "language": "XML",
+        "code": 1,
+        "comment": 0,
+        "blank": 0
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/assets/icons/lock.svg": {
+        "language": "XML",
+        "code": 1,
+        "comment": 0,
+        "blank": 0
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/assets/icons/loading.svg": {
+        "language": "XML",
+        "code": 1,
+        "comment": 0,
+        "blank": 0
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/assets/icons/full-screen.svg": {
+        "language": "XML",
+        "code": 1,
+        "comment": 0,
+        "blank": 0
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/App.vue": {
+        "language": "Vue",
+        "code": 13,
+        "comment": 0,
+        "blank": 2
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/assets/icons/exit-full.svg": {
+        "language": "XML",
+        "code": 1,
+        "comment": 0,
+        "blank": 0
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/assets/icons/copyright.svg": {
+        "language": "XML",
+        "code": 1,
+        "comment": 0,
+        "blank": 0
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/api/user/type.ts": {
+        "language": "TypeScript",
+        "code": 21,
+        "comment": 5,
+        "blank": 3
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/api/product/spu/type.ts": {
+        "language": "TypeScript",
+        "code": 73,
+        "comment": 3,
+        "blank": 11
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/api/product/spu/index.ts": {
+        "language": "TypeScript",
+        "code": 33,
+        "comment": 6,
+        "blank": 7
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/api/user/index.ts": {
+        "language": "TypeScript",
+        "code": 16,
+        "comment": 6,
+        "blank": 3
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/api/product/trademark/index.ts": {
+        "language": "TypeScript",
+        "code": 38,
+        "comment": 14,
+        "blank": 7
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/api/product/attr/index.ts": {
+        "language": "TypeScript",
+        "code": 37,
+        "comment": 10,
+        "blank": 4
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/api/product/trademark/type.ts": {
+        "language": "TypeScript",
+        "code": 33,
+        "comment": 1,
+        "blank": 3
+    },
+    "file:///d%3A/OneDrive/%E6%A1%8C%E9%9D%A2/vue3-admin-template/vue3-admin-template/src/api/product/attr/type.ts": {
+        "language": "TypeScript",
+        "code": 66,
+        "comment": 2,
+        "blank": 10
+    }
+}

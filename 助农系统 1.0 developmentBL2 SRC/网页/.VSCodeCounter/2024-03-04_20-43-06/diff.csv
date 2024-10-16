@@ -1,0 +1,12 @@
+"filename", "language", "Vue", "TypeScript", "comment", "blank", "total"
+"d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\components\index.ts", "TypeScript", 0, -1, 1, 0, 0
+"d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\layout\index.vue", "Vue", 13, 0, -1, -1, 11
+"d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\layout\main\index.vue", "Vue", 25, 0, 2, 2, 29
+"d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\layout\tabbar\index.vue", "Vue", 24, 0, 2, 1, 27
+"d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\router\routes.ts", "TypeScript", 0, 52, 1, 0, 53
+"d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\views\ad\user\index.vue", "Vue", 6, 0, 0, 0, 6
+"d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\views\product\attr\index.vue", "Vue", 7, 0, 0, 2, 9
+"d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\views\product\sku\index.vue", "Vue", 7, 0, 0, 2, 9
+"d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\views\product\spu\index.vue", "Vue", 7, 0, 0, 2, 9
+"d:\OneDrive\桌面\vue3-admin-template\vue3-admin-template\src\views\product\trademark\index.vue", "Vue", 7, 0, 0, 2, 9
+"Total", "-", 96, 51, 5, 10, 162
