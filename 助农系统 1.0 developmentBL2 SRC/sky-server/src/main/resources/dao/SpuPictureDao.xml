@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sky.dao.SpuPictureDao">
+
+    <resultMap type="com.sky.entity.SpuPicture" id="SpuPictureMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="spuId" column="spu_id" jdbcType="INTEGER"/>
+        <result property="pictureUrl" column="picture_url" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="base_column">
+        id
+        ,spu_id,picture_url
+    </sql>
+    <sql id="base_column_ex_id">
+        id
+        ,spu_id,picture_url
+    </sql>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="SpuPictureMap">
+        select
+        <include refid="base_column"></include>
+        from spu_picture
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="SpuPictureMap">
+        select
+        <include refid="base_column"></include>
+        from spu_picture
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="spuId != null">
+                and spu_id = #{spuId}
+            </if>
+            <if test="pictureUrl != null and pictureUrl != ''">
+                and picture_url = #{pictureUrl}
+            </if>
+        </where>
+        limit #{pageable.offset}, #{pageable.pageSize}
+    </select>
+
+    <!--统计总行数-->
+    <select id="count" resultType="java.lang.Long">
+        select count(1)
+        from spu_picture
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="spuId != null">
+                and spu_id = #{spuId}
+            </if>
+            <if test="pictureUrl != null and pictureUrl != ''">
+                and picture_url = #{pictureUrl}
+            </if>
+        </where>
+    </select>
+    <select id="selectBySpuId" resultType="com.sky.entity.SpuPicture">
+        select *
+        from spu_picture
+        where spu_id = #{id}
+
+
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        <selectKey resultType="java.lang.Integer" order="BEFORE" keyProperty="id">
+            SELECT SPU_PICTURE_SEQ.nextval FROM DUAL
+        </selectKey>
+        insert into spu_picture(<include refid="base_column"></include>)
+        values (#{id},#{spuId},#{pictureUrl})
+    </insert>
+
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into spu_picture(<include refid="base_column_ex_id"></include>)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.spuId},#{entity.pictureUrl})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into spu_picture(<include refid="base_column"></include>)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.id},#{entity.spuId},#{entity.pictureUrl})
+        </foreach>
+        on duplicate key update
+        id=values(id)spu_id = values(spu_id)picture_url = values(picture_url)
+    </insert>
+    <insert id="insertSpuIDandPictureUrl">
+        insert into spu_picture (spu_id, picture_url)
+        values (#{spuId}, #{picture})
+
+    </insert>
+
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update spu_picture
+        <set>
+            <if test="spuId != null">
+                spu_id = #{spuId},
+            </if>
+            <if test="pictureUrl != null and pictureUrl != ''">
+                picture_url = #{pictureUrl},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+    <update id="updateSpuPicture">
+
+        update spu_picture
+        <set>
+            <if test="spuId != null">
+                spu_id = #{spuId},
+            </if>
+            <if test="pictureUrl != null and pictureUrl != ''">
+                picture_url = #{pictureUrl},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete
+        from spu_picture
+        where id = #{id}
+    </delete>
+
+</mapper>
+

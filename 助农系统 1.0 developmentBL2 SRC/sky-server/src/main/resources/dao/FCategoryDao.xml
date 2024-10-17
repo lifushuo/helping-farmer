@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sky.dao.FCategoryDao">
+
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into primary_classification(name, icon, is_effective, is_deleted)
+        values (#{name},#{icon},#{isEffective},#{isEffective})
+    </insert>
+    <select id="getAll" resultType="com.sky.entity.PrimaryClassification">
+        select *  from primary_classification
+    </select>
+    <select id="getInfo" resultType="com.sky.entity.PrimaryClassification">
+        select * from primary_classification where id=#{id}
+    </select>
+    <select id="page" resultType="com.sky.entity.PrimaryClassification">
+        select * from primary_classification
+        <where>
+            <if test="name!=null and name!=''">
+                 name like concat('%',#{name},'%')
+            </if>
+        </where>
+    </select>
+    <select id="getFirstcategory" resultType="com.sky.vo.FirstCategoryPageVO">
+        select id,name,icon as picture from primary_classification
+    </select>
+    <select id="getSecondcategory" resultType="com.sky.vo.SecondCategoryVO">
+        select b.id,b.name from primary_classification  a
+            join secondary_classification  b
+            on a.id=b.parent_id
+        where a.id=#{firstId}
+    </select>
+    <select id="getSpuInfo" resultType="com.sky.vo.GoodsVO">
+        select c.id,c.spu_name as name,c.description,c.picture,c.price,c.sales_count as orderNum
+        from secondary_classification  b
+            join spu  c
+            on b.id = c.category2_id
+        where b.id = #{secondId}
+    </select>
+
+</mapper>

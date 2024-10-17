@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sky.dao.SkuAttriDao">
+
+    <resultMap type="com.sky.entity.SkuAttri" id="SkuAttriMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="skuId" column="sku_id" jdbcType="INTEGER"/>
+        <result property="arriId" column="arri_id" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="base_column">
+        id,sku_id,arri_id
+    </sql>
+    <sql id="base_column_ex_id">
+        sku_id,arri_id
+    </sql>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="SkuAttriMap">
+        select
+        <include refid="base_column"></include>
+        from sku_attri
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="SkuAttriMap">
+        select
+        <include refid="base_column"></include>
+        from sku_attri
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="skuId != null">
+                and sku_id = #{skuId}
+            </if>
+            <if test="arriId != null">
+                and arri_id = #{arriId}
+            </if>
+        </where>
+        limit #{pageable.offset}, #{pageable.pageSize}
+    </select>
+
+    <!--统计总行数-->
+    <select id="count" resultType="java.lang.Long">
+        select count(1)
+        from sku_attri
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="skuId != null">
+                and sku_id = #{skuId}
+            </if>
+            <if test="arriId != null">
+                and arri_id = #{arriId}
+            </if>
+        </where>
+    </select>
+
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        <selectKey resultType="java.lang.Integer" order="BEFORE" keyProperty="id">
+            SELECT SKU_ATTRI_SEQ.nextval FROM DUAL
+        </selectKey>
+        insert into sku_attri(<include refid="base_column"></include>)
+        values (#{id},#{skuId},#{arriId})
+    </insert>
+
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+
+        <foreach collection="entities" item="entity" separator=";">
+            insert into sku_attri(<include refid="base_column_ex_id"></include>)
+            values
+            (#{entity.skuId},#{entity.arriId})
+
+        </foreach>
+        ;
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into sku_attri(<include refid="base_column"></include>)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.id},#{entity.skuId},#{entity.arriId})
+        </foreach>
+        on duplicate key update
+        id=values(id)sku_id = values(sku_id)arri_id = values(arri_id)
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update sku_attri
+        <set>
+            <if test="skuId != null">
+                sku_id = #{skuId},
+            </if>
+            <if test="arriId != null">
+                arri_id = #{arriId},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete
+        from sku_attri
+        where id = #{id}
+    </delete>
+    <!--通过skuid删除属性-->
+    <delete id="deleteBySkuId">
+        delete
+        from sku_attri
+        where sku_id = #{skuId}
+    </delete>
+    <!--通过skuid获得属性-->
+<!--    <select id="getAttributesBySkuId">-->
+<!--        select arri_id-->
+<!--        from sku_attri-->
+<!--        where sku_id=#{skuId}-->
+
+<!--    </select>-->
+
+    <select id="getAttributesBySkuId" resultType="java.lang.Long">
+                select arri_id
+                from sku_attri
+                where sku_id=#{skuId}
+    </select>
+    <select id="getAttriNameBySkuId" resultType="java.lang.String">
+        select b.value as value
+        from sku_attri  a
+                 join attribute  b
+                      on a.arri_id = b.id
+        where a.sku_id = #{skuId}
+    </select>
+    <select id="getSkuAttrVOListBySkuId" resultType="com.sky.vo.SkuAttrVO">
+        select a.name  as attrName,
+               a.value as attrValue
+        from sku_attri  s
+                 join attribute  a
+                      on s.arri_id = a.id
+        where s.sku_id = #{skuId}
+    </select>
+
+
+    <select id="getGoodsSkusSpecsListBySkuId" resultType="com.sky.entity.GoodsSkusSpecs">
+        select a.name  ,
+               a.value
+        from sku_attri  s
+                 join attribute  a
+                      on s.arri_id = a.id
+        where s.sku_id = #{skuId}
+        order by a.name
+    </select>
+</mapper>
+

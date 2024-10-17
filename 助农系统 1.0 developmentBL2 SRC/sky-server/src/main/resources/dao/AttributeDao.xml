@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sky.dao.AttributeDao">
+
+    <resultMap type="com.sky.entity.Attribute" id="AttributeMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="spuId" column="spu_id" jdbcType="INTEGER"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="value" column="value" jdbcType="VARCHAR"/>
+        <result property="isDeleted" column="is_deleted" jdbcType="VARCHAR"/>
+    </resultMap>
+
+
+    <sql id="base_column">
+        id,spu_id,name,value,is_deleted
+    </sql>
+    <sql id="base_column_ex_id">
+        spu_id,name,value,is_deleted
+    </sql>
+    <!--查询单个-->
+    <select id="queryById" resultMap="AttributeMap">
+        select
+        <include refid="base_column"></include>
+        from attribute
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="AttributeMap">
+        select
+        <include refid="base_column"></include>
+        from attribute
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="spuId != null">
+                and spu_id = #{spuId}
+            </if>
+            <if test="name != null and name != ''">
+                and name = #{name}
+            </if>
+            <if test="value != null and value != ''">
+                and value = #{value}
+            </if>
+            <if test="isDeleted != null and isDeleted != ''">
+                and is_deleted = #{isDeleted}
+            </if>
+        </where>
+        limit #{pageable.offset}, #{pageable.pageSize}
+    </select>
+
+    <!--统计总行数-->
+    <select id="count" resultType="java.lang.Long">
+        select count(1)
+        from attribute
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="spuId != null">
+                and spu_id = #{spuId}
+            </if>
+            <if test="name != null and name != ''">
+                and name = #{name}
+            </if>
+            <if test="value != null and value != ''">
+                and value = #{value}
+            </if>
+            <if test="isDeleted != null and isDeleted != ''">
+                and is_deleted = #{isDeleted}
+            </if>
+        </where>
+    </select>
+    <select id="querySpuAttr" resultType="java.lang.Integer">
+        select * from attribute
+            <where>
+        <if test="id!=null ">id=#{id}</if>
+        <if test="spu_id!=null">spu_id=#{spuId}</if>
+            </where>
+    </select>
+    <select id="querySpuBySpuId" resultType="com.sky.entity.Attribute">
+        select * from attribute
+        where spu_id=#{spuid} and name=#{name}
+    </select>
+
+
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        <selectKey resultType="java.lang.Integer" order="BEFORE" keyProperty="id">
+            SELECT ATTRIBUTE_SEQ.nextval FROM DUAL
+        </selectKey>
+
+        insert into attribute(<include refid="base_column"></include>)
+        values (#{id}, #{spuId}#{name}#{value}#{isDeleted})
+    </insert>
+
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into attribute(<include refid="base_column_ex_id"></include>)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+        (#{entity.spuId},#{entity.name},#{entity.value},#{entity.isDeleted})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into attribute(<include refid="base_column_ex_id"></include>)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.spuId},#{entity.name},#{entity.value},#{entity.isDeleted})
+        </foreach>
+        on duplicate key update
+spu_id = values(spu_id)name = values(name)value = values(value)is_deleted = values(is_deleted)
+    </insert>
+    <insert id="insertSpuAttr">
+
+        <selectKey resultType="java.lang.Integer" order="BEFORE" keyProperty="id">
+            SELECT ATTRIBUTE_SEQ.nextval FROM DUAL
+        </selectKey>
+
+        insert into attribute(id,spu_id,name,value)
+        values (#{id},#{spuId},#{name},#{value})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update attribute
+        <set>
+            <if test="spuId != null">
+                spu_id = #{spuId},
+            </if>
+            <if test="name != null and name != ''">
+                name = #{name},
+            </if>
+            <if test="value != null and value != ''">
+                value = #{value},
+            </if>
+            <if test="isDeleted != null and isDeleted != ''">
+                is_deleted = #{isDeleted},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+    <update id="updateSpuAttr">
+        update attribute
+        set name=#{newName}
+        where spu_id=#{spuId} and name=#{oldName}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from attribute where id = #{id}
+    </delete>
+    <delete id="deleteSpuAttr">
+        delete from attribute where spu_id=#{spuId} and name=#{name}
+    </delete>
+
+
+    <select id="getAttributesByAttriId" resultType="com.sky.entity.SkuValue">
+        select name, value
+        from attribute
+        where id = #{id}
+    </select>
+    <select id="selectAll" resultType="com.sky.entity.Attribute">
+        select *
+        from attribute
+        where spu_id = #{spuId}
+
+
+    </select>
+    <select id="selectBySpuId" resultType="com.sky.entity.Attribute">
+        select * from attribute
+        where spu_id =#{spuId}
+    </select>
+
+    <select id="getGoodsDetailsProperties" resultType="com.sky.entity.GoodsDetailsProperties">
+        select name ,value
+        from SPECIFICATION
+        where spu_id=#{spuId}
+    </select>
+    <select id="getAttributeNameListBySpuId" resultType="java.lang.String">
+        select distinct name
+        from attribute
+        where spu_id=#{spuId}
+        order by name
+
+    </select>
+    <select id="getAttributeValueListByName" resultType="java.lang.String">
+        select value
+        from attribute
+        where name=#{name}
+    </select>
+
+</mapper>
+
