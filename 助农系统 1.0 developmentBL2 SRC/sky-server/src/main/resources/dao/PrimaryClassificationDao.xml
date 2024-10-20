@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sky.dao.PrimaryClassificationDao">
+
+    <resultMap type="com.sky.entity.PrimaryClassification" id="PrimaryClassificationMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="icon" column="icon" jdbcType="VARCHAR"/>
+        <result property="isEffective" column="is_effective" jdbcType="VARCHAR"/>
+        <result property="isDeleted" column="is_deleted" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="PrimaryClassificationMap">
+        select id,
+               name,
+               icon,
+               is_effective,
+               is_deleted
+        from WZY.primary_classification
+        where id = #{id} and is_deleted=0
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="PrimaryClassificationMap">
+        select
+        id,
+        name,icon,is_effective,is_deleted
+        from WZY.primary_classification
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="name != null and name != ''">
+                and name = #{name}
+            </if>
+            <if test="icon != null and icon != ''">
+                and icon = #{icon}
+            </if>
+            <if test="isEffective != null and isEffective != ''">
+                and is_effective = #{isEffective}
+            </if>
+            <if test="isDeleted != null and isDeleted != ''">
+                and is_deleted = #{isDeleted}
+            </if>
+        </where>
+        limit #{pageable.offset}, #{pageable.pageSize}
+    </select>
+
+    <!--统计总行数-->
+    <select id="count" resultType="java.lang.Long">
+        select count(1)
+        from WZY.primary_classification
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="name != null and name != ''">
+                and name = #{name}
+            </if>
+            <if test="icon != null and icon != ''">
+                and icon = #{icon}
+            </if>
+            <if test="isEffective != null and isEffective != ''">
+                and is_effective = #{isEffective}
+            </if>
+            <if test="isDeleted != null and isDeleted != ''">
+                and is_deleted = #{isDeleted}
+            </if>
+            and is_deleted=0
+        </where>
+    </select>
+    <select id="page" resultType="com.sky.entity.PrimaryClassification">
+    select *
+    from WZY.primary_classification
+    <where>
+        <if test="name != null and name !='' ">
+            name like concat("%", #{name},"%")
+        </if>
+        <if test="1==1">
+            and is_deleted=0
+        </if>
+    </where>
+
+
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        <selectKey resultType="java.lang.Integer" order="BEFORE" keyProperty="id">
+            SELECT PRIMARY_SUMMARY_SEQ.nextval FROM DUAL
+        </selectKey>
+
+        insert into WZY.primary_classification(id,name, icon, is_effective, is_deleted)
+        values (#{id},#{name}, #{icon}, #{isEffective}, #{isDeleted})
+    </insert>
+
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into WZY.primary_classification(name,icon,is_effective,is_deleted)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.name},#{entity.icon},#{entity.isEffective},#{entity.isDeleted})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into WZY.primary_classification(name,icon,is_effective,is_deleted)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.name},#{entity.icon},#{entity.isEffective},#{entity.isDeleted})
+        </foreach>
+        on duplicate key update
+        name = values(name)icon = values(icon)is_effective = values(is_effective)is_deleted = values(is_deleted)
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update WZY.primary_classification
+        <set>
+            <if test="name != null and name != ''">
+                name = #{name},
+            </if>
+            <if test="icon != null and icon != ''">
+                icon = #{icon},
+            </if>
+            <if test="isEffective != null and isEffective != ''">
+                is_effective = #{isEffective},
+            </if>
+            <if test="isDeleted != null and isDeleted != ''">
+                is_deleted = #{isDeleted},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete
+        from WZY.primary_classification
+        where id = #{id}
+    </delete>
+
+</mapper>
+

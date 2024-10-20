@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c482790e-57c6-4acb-b677-57fa928db8bb" name="更改" comment="第二次测试">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="c482790e-57c6-4acb-b677-57fa928db8bb" name="更改" comment="第二次测试" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,12 +31,14 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "true",
-    "git-widget-placeholder": "发布基线1",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/helping-farmer2/助农系统 1.0 developmentBL2 SRC",
+    "last_opened_file_path": "D:/helping-farmer2",
     "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.stylelint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.stylelint": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
@@ -65,11 +65,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\helping-farmer2" />
+      <recent name="D:\helping-farmer2\丰收宝盒1.0 configurationBL CM" />
       <recent name="D:\helping-farmer2\助农系统 1.0 developmentBL2 SRC" />
       <recent name="D:\helping-farmer2\助农系统 1.0.BL1.代码" />
       <recent name="D:\helping-farmer2\丰收宝盒 1.0 designBL SD" />
-      <recent name="D:\helping-farmer2\丰收宝盒 1.0 developmentBL" />
-      <recent name="D:\helping-farmer2\系统设计与实施" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\@Code\@python\GitHub\helping-farmer" />
@@ -189,6 +189,7 @@
       <workItem from="1729060031474" duration="2279000" />
       <workItem from="1729069538596" duration="869000" />
       <workItem from="1729084250783" duration="1115000" />
+<<<<<<< HEAD
 <<<<<<< Updated upstream
       <workItem from="1729143425731" duration="1030000" />
 =======
@@ -196,6 +197,9 @@
       <workItem from="1729148351573" duration="527000" />
       <workItem from="1729163657834" duration="15000" />
 >>>>>>> Stashed changes
+=======
+      <workItem from="1729143425731" duration="1813000" />
+>>>>>>> main
     </task>
     <task id="LOCAL-00001" summary="测试文档提交">
       <option name="closed" value="true" />

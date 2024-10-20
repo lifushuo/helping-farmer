@@ -1,0 +1,667 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sky.dao.OrderSummaryDao">
+
+    <resultMap type="com.sky.entity.OrderSummary" id="OrderSummaryMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="number" column="number" jdbcType="INTEGER"/>
+        <result property="status" column="status" jdbcType="INTEGER"/>
+        <result property="userId" column="user_id" jdbcType="INTEGER"/>
+        <result property="addressBookId" column="address_book_id" jdbcType="INTEGER"/>
+        <result property="payMethod" column="pay_method" jdbcType="INTEGER"/>
+        <result property="payId" column="pay_id" jdbcType="INTEGER"/>
+        <result property="payStatus" column="pay_status" jdbcType="INTEGER"/>
+        <result property="sumMoney" column="sum_money" jdbcType="NUMERIC"/>
+        <result property="discountMoney" column="discount_money" jdbcType="NUMERIC"/>
+        <result property="payMoney" column="pay_money" jdbcType="NUMERIC"/>
+        <result property="remark" column="remark" jdbcType="VARCHAR"/>
+        <result property="phone" column="phone" jdbcType="VARCHAR"/>
+        <result property="address" column="address" jdbcType="VARCHAR"/>
+        <result property="userName" column="user_name" jdbcType="VARCHAR"/>
+        <result property="consignee" column="consignee" jdbcType="VARCHAR"/>
+        <result property="cancelReason" column="cancel_reason" jdbcType="VARCHAR"/>
+        <result property="rejectionReason" column="rejection_reason" jdbcType="VARCHAR"/>
+        <result property="cancelTime" column="cancel_time" jdbcType="TIMESTAMP"/>
+        <result property="estimatedDeliveryTime" column="estimated_delivery_time" jdbcType="TIMESTAMP"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="deliveryTime" column="delivery_time" jdbcType="TIMESTAMP"/>
+        <result property="checkoutTime" column="checkout_time" jdbcType="TIMESTAMP"/>
+        <result property="payAmount" column="pay_amount" jdbcType="NUMERIC"/>
+        <result property="isDeleted" column="is_deleted" jdbcType="INTEGER"/>
+    </resultMap>
+    <resultMap id="UserOrderDetailVOResultMap" type="com.sky.vo.UserOrderDetailVO">
+        <id property="id" column="id"/>
+        <result property="orderState" column="orderState"/>
+        <result property="receiverContact" column="receiverContact"/>
+        <result property="receiverMobile" column="receiverMobile"/>
+        <result property="receiverAddress" column="receiverAddress"/>
+        <result property="createTime" column="createTime"/>
+        <result property="totalMoney" column="totalMoney"/>
+        <result property="postFee" column="postFee"/>
+        <result property="payMoney" column="payMoney"/>
+        <collection property="skus" ofType="com.sky.vo.UserOrderDetailSkuVO">
+            <id property="id" column="skuId"/>
+            <result property="spuId" column="spuId"/>
+            <result property="name" column="skuName"/>
+            <result property="quantity" column="quantity"/>
+            <result property="curPrice" column="curPrice"/>
+            <result property="image" column="image"/>
+            <result property="attrsText" column="attrsText"/>
+        </collection>
+    </resultMap>
+
+    <resultMap id="OrderWriteResultMap" type="com.sky.vo.OrderWriteVO">
+
+        <association property="summary" javaType="com.sky.vo.OrderWriteSummaryVO">
+            <result property="goodsCount" column="goodsCount"/>
+            <result property="totalPrice" column="totalPrice"/>
+            <result property="totalPayPrice" column="totalPayPrice"/>
+            <result property="postFee" column="postFee"/>
+            <result property="discountPrice" column="discountPrice"/>
+        </association>
+        <collection property="userAddresses" ofType="com.sky.vo.OrderWriteUserVO">
+            <result property="address" column="address"/>
+            <result property="cityCode" column="cityCode"/>
+            <result property="contact" column="contact"/>
+            <result property="countyCode" column="countyCode"/>
+            <result property="fullLocation" column="fullLocation"/>
+            <result property="id" column="id"/>
+            <result property="isDefault" column="isDefault"/>
+            <result property="provinceCode" column="provinceCode"/>
+            <result property="receiver" column="receiver"/>
+        </collection>
+        <collection property="goods" ofType="com.sky.vo.OrderWriteGoodVO">
+            <result property="skuId" column="skuId"/>
+            <result property="name" column="name"/>
+            <result property="count" column="count"/>
+            <result property="price" column="price"/>
+            <result property="payPrice" column="payPrice"/>
+            <result property="totalPrice" column="totalPrice"/>
+            <result property="totalPayPrice" column="totalPayPrice"/>
+            <result property="attrsText" column="attrsText"/>
+        </collection>
+    </resultMap>
+
+
+
+
+
+    <sql id="base_colum">
+        id,number,status,user_id,address_book_id,pay_method,pay_id,pay_status,sum_money,discount_money,pay_money,remark,phone,address,user_name,consignee,cancel_reason,rejection_reason,cancel_time,estimated_delivery_time,create_time,delivery_time,checkout_time,pay_amount,is_deleted
+    </sql>
+    <sql id="base_colum_ex_id">
+        number,status,user_id,address_book_id,pay_method,pay_id,pay_status,sum_money,discount_money,pay_money,remark,phone,address,user_name,consignee,cancel_reason,rejection_reason,cancel_time,estimated_delivery_time,create_time,delivery_time,checkout_time,pay_amount,is_deleted
+    </sql>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="OrderSummaryMap">
+        select
+        <include refid="base_colum"></include>
+        from order_summary
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="OrderSummaryMap">
+        select
+        <include refid="base_colum"></include>
+        from order_summary
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="number != null">
+                and number = #{number}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+            <if test="userId != null">
+                and user_id = #{userId}
+            </if>
+            <if test="addressBookId != null">
+                and address_book_id = #{addressBookId}
+            </if>
+            <if test="payMethod != null">
+                and pay_method = #{payMethod}
+            </if>
+            <if test="payId != null">
+                and pay_id = #{payId}
+            </if>
+            <if test="payStatus != null">
+                and pay_status = #{payStatus}
+            </if>
+            <if test="sumMoney != null">
+                and sum_money = #{sumMoney}
+            </if>
+            <if test="discountMoney != null">
+                and discount_money = #{discountMoney}
+            </if>
+            <if test="payMoney != null">
+                and pay_money = #{payMoney}
+            </if>
+            <if test="remark != null and remark != ''">
+                and remark = #{remark}
+            </if>
+            <if test="phone != null and phone != ''">
+                and phone = #{phone}
+            </if>
+            <if test="address != null and address != ''">
+                and address = #{address}
+            </if>
+            <if test="userName != null and userName != ''">
+                and user_name = #{userName}
+            </if>
+            <if test="consignee != null and consignee != ''">
+                and consignee = #{consignee}
+            </if>
+            <if test="cancelReason != null and cancelReason != ''">
+                and cancel_reason = #{cancelReason}
+            </if>
+            <if test="rejectionReason != null and rejectionReason != ''">
+                and rejection_reason = #{rejectionReason}
+            </if>
+            <if test="cancelTime != null">
+                and cancel_time = #{cancelTime}
+            </if>
+            <if test="estimatedDeliveryTime != null">
+                and estimated_delivery_time = #{estimatedDeliveryTime}
+            </if>
+            <if test="createTime != null">
+                and create_time = #{createTime}
+            </if>
+            <if test="deliveryTime != null">
+                and delivery_time = #{deliveryTime}
+            </if>
+            <if test="checkoutTime != null">
+                and checkout_time = #{checkoutTime}
+            </if>
+            <if test="payAmount != null">
+                and pay_amount = #{payAmount}
+            </if>
+            <if test="isDeleted != null">
+                and is_deleted = #{isDeleted}
+            </if>
+        </where>
+        limit #{pageable.offset}, #{pageable.pageSize}
+    </select>
+
+    <!--统计总行数-->
+    <select id="count" resultType="java.lang.Long">
+        select count(1)
+        from order_summary
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="number != null">
+                and number = #{number}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+            <if test="userId != null">
+                and user_id = #{userId}
+            </if>
+            <if test="addressBookId != null">
+                and address_book_id = #{addressBookId}
+            </if>
+            <if test="payMethod != null">
+                and pay_method = #{payMethod}
+            </if>
+            <if test="payId != null">
+                and pay_id = #{payId}
+            </if>
+            <if test="payStatus != null">
+                and pay_status = #{payStatus}
+            </if>
+            <if test="sumMoney != null">
+                and sum_money = #{sumMoney}
+            </if>
+            <if test="discountMoney != null">
+                and discount_money = #{discountMoney}
+            </if>
+            <if test="payMoney != null">
+                and pay_money = #{payMoney}
+            </if>
+            <if test="remark != null and remark != ''">
+                and remark = #{remark}
+            </if>
+            <if test="phone != null and phone != ''">
+                and phone = #{phone}
+            </if>
+            <if test="address != null and address != ''">
+                and address = #{address}
+            </if>
+            <if test="userName != null and userName != ''">
+                and user_name = #{userName}
+            </if>
+            <if test="consignee != null and consignee != ''">
+                and consignee = #{consignee}
+            </if>
+            <if test="cancelReason != null and cancelReason != ''">
+                and cancel_reason = #{cancelReason}
+            </if>
+            <if test="rejectionReason != null and rejectionReason != ''">
+                and rejection_reason = #{rejectionReason}
+            </if>
+            <if test="cancelTime != null">
+                and cancel_time = #{cancelTime}
+            </if>
+            <if test="estimatedDeliveryTime != null">
+                and estimated_delivery_time = #{estimatedDeliveryTime}
+            </if>
+            <if test="createTime != null">
+                and create_time = #{createTime}
+            </if>
+            <if test="deliveryTime != null">
+                and delivery_time = #{deliveryTime}
+            </if>
+            <if test="checkoutTime != null">
+                and checkout_time = #{checkoutTime}
+            </if>
+            <if test="payAmount != null">
+                and pay_amount = #{payAmount}
+            </if>
+            <if test="isDeleted != null">
+                and is_deleted = #{isDeleted}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        <selectKey resultType="java.lang.Integer" order="BEFORE" keyProperty="id">
+            SELECT ORDER_SUMMARY_SEQ.nextval FROM DUAL
+        </selectKey>
+
+        insert into order_summary
+
+            <trim prefix="(" suffix=")" suffixOverrides=",">
+                id,
+            <if test="number != null">number,</if>
+            <if test="status != null">status,</if>
+            <if test="userId != null">user_id,</if>
+            <if test="addressBookId != null">address_book_id,</if>
+            <if test="payMethod != null">pay_method,</if>
+            <if test="payId != null">pay_id,</if>
+            <if test="payStatus != null">pay_status,</if>
+            <if test="sumMoney != null">sum_money,</if>
+            <if test="discountMoney != null">discount_money,</if>
+            <if test="payMoney != null">pay_money,</if>
+            <if test="remark != null">remark,</if>
+            <if test="phone != null">phone,</if>
+            <if test="address != null">address,</if>
+            <if test="userName != null">user_name,</if>
+            <if test="consignee != null">consignee,</if>
+            <if test="cancelReason != null">cancel_reason,</if>
+            <if test="rejectionReason != null">rejection_reason,</if>
+            <if test="cancelTime != null">cancel_time,</if>
+            <if test="estimatedDeliveryTime != null">estimated_delivery_time,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="deliveryTime != null">delivery_time,</if>
+            <if test="checkoutTime != null">checkout_time,</if>
+            <if test="payAmount != null">pay_amount,</if>
+            <if test="isDeleted != null">is_deleted,</if>
+        </trim>
+        values
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            #{id},
+            <if test="number != null">#{number},</if>
+            <if test="status != null">#{status},</if>
+            <if test="userId != null">#{userId},</if>
+            <if test="addressBookId != null">#{addressBookId},</if>
+            <if test="payMethod != null">#{payMethod},</if>
+            <if test="payId != null">#{payId},</if>
+            <if test="payStatus != null">#{payStatus},</if>
+            <if test="sumMoney != null">#{sumMoney},</if>
+            <if test="discountMoney != null">#{discountMoney},</if>
+            <if test="payMoney != null">#{payMoney},</if>
+            <if test="remark != null">#{remark},</if>
+            <if test="phone != null">#{phone},</if>
+            <if test="address != null">#{address},</if>
+            <if test="userName != null">#{userName},</if>
+            <if test="consignee != null">#{consignee},</if>
+            <if test="cancelReason != null">#{cancelReason},</if>
+            <if test="rejectionReason != null">#{rejectionReason},</if>
+            <if test="cancelTime != null">#{cancelTime},</if>
+            <if test="estimatedDeliveryTime != null">#{estimatedDeliveryTime},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="deliveryTime != null">#{deliveryTime},</if>
+            <if test="checkoutTime != null">#{checkoutTime},</if>
+            <if test="payAmount != null">#{payAmount},</if>
+            <if test="isDeleted != null">#{isDeleted},</if>
+        </trim>
+    </insert>
+
+
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into
+        order_summary(<include refid="base_colum"></include>)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.number},#{entity.status},#{entity.userId},#{entity.addressBookId},#{entity.payMethod}
+            ,#{entity.payId},#{entity.payStatus},#{entity.sumMoney},#{entity.discountMoney},#{entity.payMoney},
+            #{entity.remark},#{entity.phone},#{entity.address},#{entity.userName},#{entity.consignee},#{entity.cancelReason},
+            #{entity.rejectionReason},#{entity.cancelTime},#{entity.estimatedDeliveryTime},#{entity.createTime},
+            #{entity.deliveryTime},#{entity.checkoutTime},#{entity.payAmount},#{entity.isDeleted})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into
+        order_summary(<include refid="base_colum"></include>)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+
+            (#{entity.number},#{entity.status},#{entity.userId},#{entity.addressBookId},#{entity.payMethod}
+            ,#{entity.payId},#{entity.payStatus},#{entity.sumMoney},#{entity.discountMoney},#{entity.payMoney},
+            #{entity.remark},#{entity.phone},#{entity.address},#{entity.userName},#{entity.consignee},#{entity.cancelReason},
+            #{entity.rejectionReason},#{entity.cancelTime},#{entity.estimatedDeliveryTime},#{entity.createTime},
+            #{entity.deliveryTime},#{entity.checkoutTime},#{entity.payAmount},#{entity.isDeleted})
+        </foreach>
+        on duplicate key update
+        number = values(number)status = values(status)user_id = values(user_id)address_book_id =
+        values(address_book_id)pay_method = values(pay_method)pay_id = values(pay_id)pay_status =
+        values(pay_status)sum_money = values(sum_money)discount_money = values(discount_money)pay_money =
+        values(pay_money)remark = values(remark)phone = values(phone)address = values(address)user_name =
+        values(user_name)consignee = values(consignee)cancel_reason = values(cancel_reason)rejection_reason =
+        values(rejection_reason)cancel_time = values(cancel_time)estimated_delivery_time =
+        values(estimated_delivery_time)create_time = values(create_time)delivery_time =
+        values(delivery_time)checkout_time = values(checkout_time)pay_amount = values(pay_amount)is_deleted =
+        values(is_deleted)
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update order_summary
+        <set>
+            <if test="number != null">
+                number = #{number},
+            </if>
+            <if test="status != null">
+                status = #{status},
+            </if>
+            <if test="userId != null">
+                user_id = #{userId},
+            </if>
+            <if test="addressBookId != null">
+                address_book_id = #{addressBookId},
+            </if>
+            <if test="payMethod != null">
+                pay_method = #{payMethod},
+            </if>
+            <if test="payId != null">
+                pay_id = #{payId},
+            </if>
+            <if test="payStatus != null">
+                pay_status = #{payStatus},
+            </if>
+            <if test="sumMoney != null">
+                sum_money = #{sumMoney},
+            </if>
+            <if test="discountMoney != null">
+                discount_money = #{discountMoney},
+            </if>
+            <if test="payMoney != null">
+                pay_money = #{payMoney},
+            </if>
+            <if test="remark != null and remark != ''">
+                remark = #{remark},
+            </if>
+            <if test="phone != null and phone != ''">
+                phone = #{phone},
+            </if>
+            <if test="address != null and address != ''">
+                address = #{address},
+            </if>
+            <if test="userName != null and userName != ''">
+                user_name = #{userName},
+            </if>
+            <if test="consignee != null and consignee != ''">
+                consignee = #{consignee},
+            </if>
+            <if test="cancelReason != null and cancelReason != ''">
+                cancel_reason = #{cancelReason},
+            </if>
+            <if test="rejectionReason != null and rejectionReason != ''">
+                rejection_reason = #{rejectionReason},
+            </if>
+            <if test="cancelTime != null">
+                cancel_time = #{cancelTime},
+            </if>
+            <if test="estimatedDeliveryTime != null">
+                estimated_delivery_time = #{estimatedDeliveryTime},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime},
+            </if>
+            <if test="deliveryTime != null">
+                delivery_time = #{deliveryTime},
+            </if>
+            <if test="checkoutTime != null">
+                checkout_time = #{checkoutTime},
+            </if>
+            <if test="payAmount != null">
+                pay_amount = #{payAmount},
+            </if>
+            <if test="isDeleted != null">
+                is_deleted = #{isDeleted},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+    <update id="setPayed">
+        update order_summary
+        set status = 2
+        where id = #{id}
+    </update>
+    <update id="setFaHuo">
+        update order_summary
+        set status = 4
+        where id = #{id}
+    </update>
+    <update id="setShouHuo">
+        update order_summary
+        set status = 5
+        where id = #{id}
+    </update>
+    <update id="setCancel">
+        update order_summary
+        set status = 6
+        where id = #{id}
+    </update>
+    <update id="setDelete">
+        delete from order_summary
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete
+        from order_summary
+        where id = #{id}
+    </delete>
+    <update id="cancelOrder">
+        update order_summary
+        set status=6,cancel_reason=#{cancelReason}
+        where id=#{orderId}
+    </update>
+    <update id="setOrderComplete">
+        update order_summary
+        set status=5
+        where id=#{orderId}
+    </update>
+    <update id="rejectOrder">
+        update order_summary
+        set status=6,rejection_reason=#{rejectReason}
+        where id=#{orderId}
+    </update>
+    <update id="setOrderConfirm">
+        update order_summary
+        set status=3
+        where id=#{orderId}
+    </update>
+    <update id="setOrderDeliver">
+        update order_summary
+        set status=4
+        where id=#{orderId}
+    </update>
+
+    <!--    获取订单某种状态的数量-->
+    <select id="getOrderAmount" resultType="java.lang.Integer">
+        select count(0)
+        from order_summary
+        where status = #{status}
+    </select>
+
+
+    <select id="countOrders" resultType="java.lang.Long">
+        SELECT COUNT(*) FROM order_summary
+        <where>
+            <if test="orderSearch.beginTime != null">
+                AND create_time &gt;= #{orderSearch.beginTime}
+            </if>
+            <if test="orderSearch.endTime != null">
+                AND create_time &lt;= #{orderSearch.endTime}
+            </if>
+            <if test="orderSearch.number != null and orderSearch.number != ''">
+                AND id = #{orderSearch.number}
+            </if>
+            <if test="orderSearch.phone != null and orderSearch.phone != ''">
+                AND phone = #{orderSearch.phone}
+            </if>
+            <if test="orderSearch.status != 0">
+                AND status = #{orderSearch.status}
+            </if>
+        </where>
+    </select>
+
+
+    <select id="searchOrders" resultType="com.sky.entity.OrderSummary">
+        SELECT * FROM order_summary
+        <where>
+            <if test="orderSearch.beginTime != null and orderSearch.beginTime!= ''">
+                AND create_time &gt;= #{orderSearch.beginTime}
+            </if>
+            <if test="orderSearch.endTime != null and orderSearch.endTime!= ''">
+                AND create_time &lt;= #{orderSearch.endTime}
+            </if>
+            <if test="orderSearch.number != null and orderSearch.number != ''">
+                AND id = #{orderSearch.number}
+            </if>
+            <if test="orderSearch.phone != null and orderSearch.phone != ''">
+                AND phone = #{orderSearch.phone}
+            </if>
+            <if test="orderSearch.status != 0">
+                AND status = #{orderSearch.status}
+            </if>
+        </where>
+
+    </select>
+    <select id="getOrderDetail" resultType="com.sky.vo.UserOrderDetailVO">
+        select id          as id,
+               status      as orderState,
+               consignee   as receiverContact,
+               phone       as receiverMobile,
+               address     as receiverAddress,
+               create_time as createTime,
+               sum_money   as totalMoney,
+               pay_amount  as postFee,
+               pay_money   as payMoney
+        from order_summary
+        where id = #{id}
+    </select>
+<!--    <select id="getOrderDetailSkuList" resultType="com.sky.vo.UserOrderDetailSkuVO">-->
+<!--        select od.id       as id,-->
+<!--               sk.spu_id   as spuId,-->
+<!--               sk.sku_name as name,-->
+<!--               od.count    as quantity,-->
+<!--               sk.price    as curPrice,-->
+<!--               sk.picture    as image-->
+<!--        from order_summary as os-->
+<!--                 join order_detail as od-->
+<!--                      on os.id = od.order_id-->
+<!--                 join sku as sk-->
+<!--                      on od.skuid = sk.id-->
+<!--        #                  join sku_attri as ska-->
+<!--#                       on sk.id = ska.sku_id-->
+<!--#                  join attribute as att-->
+<!--#                       on ska.arri_id = att.id-->
+<!--        where od.id = #{id}-->
+<!--    </select>-->
+    <select id="getOrderDetailSkuList" resultType="com.sky.vo.UserOrderDetailSkuVO">
+        SELECT od.id AS id,
+               sk.spu_id AS spuId,
+               sk.sku_name AS name,
+               od.count AS quantity,
+               sk.price AS curPrice,
+               sk.picture AS image
+        FROM order_summary  os
+                 JOIN order_detail  od
+                      ON os.id = od.order_id
+                 JOIN sku  sk
+                      ON od.skuid = sk.id
+
+        WHERE os.id = #{id}
+    </select>
+
+
+    <select id="getOrderHistory" resultMap="UserOrderDetailVOResultMap">
+        SELECT os.id AS id,
+               os.status AS orderState,
+               os.consignee AS receiverContact,
+               os.phone AS receiverMobile,
+               os.address AS receiverAddress,
+               os.create_time AS createTime,
+               os.sum_money AS totalMoney,
+               os.pay_amount AS postFee,
+               os.pay_money AS payMoney,
+               od.id AS skuId,
+               sk.spu_id AS spuId,
+               sk.sku_name AS skuName,
+               od.count AS quantity,
+               sk.price AS curPrice,
+               sk.picture AS image
+
+        FROM order_summary  os
+                 JOIN order_detail  od ON os.id = od.order_id
+                 JOIN sku  sk ON od.skuid = sk.id
+                 LEFT JOIN sku_attri  ska ON sk.id = ska.sku_id
+                 LEFT JOIN attribute  att ON ska.arri_id = att.id
+        WHERE os.status = #{status}
+
+
+    </select>
+
+
+    <select id="getOrderHistoryCount" resultType="int">
+        SELECT COUNT(*)
+        FROM order_summary
+        WHERE status = #{status}
+    </select>
+
+
+    <select id="writeOrder" resultType="com.sky.vo.OrderWriteGoodVO">
+        SELECT
+            s.id                   AS skuId,
+            s.sku_name             AS name,
+            sc.count               AS count,
+            s.old_price            AS price,
+            s.price                AS payPrice,
+            s.old_price * sc.count AS totalPrice,
+            s.price * sc.count     AS totalPayPrice,
+            s.picture              AS picture
+        FROM SHOPPING_CART sc
+                 JOIN
+             SKU s ON sc.sku_id = s.id
+
+        where sc.USER_ID = #{userId}
+          and sc.IS_SELECTED = 1
+
+    </select>
+
+
+
+</mapper>
+

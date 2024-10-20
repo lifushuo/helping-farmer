@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sky.dao.AddressDao">
+
+    <resultMap type="com.sky.entity.Address" id="AddressMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="userId" column="user_id" jdbcType="INTEGER"/>
+        <result property="consignee" column="consignee" jdbcType="VARCHAR"/>
+        <result property="sex" column="sex" jdbcType="VARCHAR"/>
+        <result property="phone" column="phone" jdbcType="VARCHAR"/>
+        <result property="provinceCode" column="province_code" jdbcType="VARCHAR"/>
+        <result property="provinceName" column="province_name" jdbcType="VARCHAR"/>
+        <result property="cityCode" column="city_code" jdbcType="VARCHAR"/>
+        <result property="cityName" column="city_name" jdbcType="VARCHAR"/>
+        <result property="districtCode" column="district_code" jdbcType="VARCHAR"/>
+        <result property="districtName" column="district_name" jdbcType="VARCHAR"/>
+        <result property="detail" column="detail" jdbcType="VARCHAR"/>
+        <result property="label" column="label" jdbcType="VARCHAR"/>
+        <result property="isDefault" column="is_default" jdbcType="VARCHAR"/>
+        <result property="isDeleted" column="is_deleted" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="base_column">
+        id,user_id,consignee,sex,phone,province_code,province_name,city_code,
+        city_name,district_code,district_name,detail,label,is_default,is_deleted
+    </sql>
+    <sql id="base_column_ex_id">
+        user_id,consignee,sex,phone,province_code,province_name,city_code,
+        city_name,district_code,district_name,detail,label,is_default,is_deleted
+    </sql>
+
+    <sql id="base_column_ex_id_1">
+        user_id,consignee,sex,phone,province_code,province_name,city_code,
+        city_name,district_code,district_name,detail,label,is_default,is_deleted
+    </sql>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="AddressMap">
+        select
+        <include refid="base_column"></include>
+        from address
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="AddressMap">
+        select
+        <include refid="base_column"></include>
+        from address
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="userId != null">
+                and user_id = #{userId}
+            </if>
+            <if test="consignee != null and consignee != ''">
+                and consignee = #{consignee}
+            </if>
+            <if test="sex != null and sex != ''">
+                and sex = #{sex}
+            </if>
+            <if test="phone != null and phone != ''">
+                and phone = #{phone}
+            </if>
+            <if test="provinceCode != null and provinceCode != ''">
+                and province_code = #{provinceCode}
+            </if>
+            <if test="provinceName != null and provinceName != ''">
+                and province_name = #{provinceName}
+            </if>
+            <if test="cityCode != null and cityCode != ''">
+                and city_code = #{cityCode}
+            </if>
+            <if test="cityName != null and cityName != ''">
+                and city_name = #{cityName}
+            </if>
+            <if test="districtCode != null and districtCode != ''">
+                and district_code = #{districtCode}
+            </if>
+            <if test="districtName != null and districtName != ''">
+                and district_name = #{districtName}
+            </if>
+            <if test="detail != null and detail != ''">
+                and detail = #{detail}
+            </if>
+            <if test="label != null and label != ''">
+                and label = #{label}
+            </if>
+            <if test="isDefault != null and isDefault != ''">
+                and is_default = #{isDefault}
+            </if>
+            <if test="isDeleted != null and isDeleted != ''">
+                and is_deleted = #{isDeleted}
+            </if>
+        </where>
+        limit #{pageable.offset}, #{pageable.pageSize}
+    </select>
+
+    <!--统计总行数-->
+    <select id="count" resultType="java.lang.Long">
+        select count(1)
+        from address
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="userId != null">
+                and user_id = #{userId}
+            </if>
+            <if test="consignee != null and consignee != ''">
+                and consignee = #{consignee}
+            </if>
+            <if test="sex != null and sex != ''">
+                and sex = #{sex}
+            </if>
+            <if test="phone != null and phone != ''">
+                and phone = #{phone}
+            </if>
+            <if test="provinceCode != null and provinceCode != ''">
+                and province_code = #{provinceCode}
+            </if>
+            <if test="provinceName != null and provinceName != ''">
+                and province_name = #{provinceName}
+            </if>
+            <if test="cityCode != null and cityCode != ''">
+                and city_code = #{cityCode}
+            </if>
+            <if test="cityName != null and cityName != ''">
+                and city_name = #{cityName}
+            </if>
+            <if test="districtCode != null and districtCode != ''">
+                and district_code = #{districtCode}
+            </if>
+            <if test="districtName != null and districtName != ''">
+                and district_name = #{districtName}
+            </if>
+            <if test="detail != null and detail != ''">
+                and detail = #{detail}
+            </if>
+            <if test="label != null and label != ''">
+                and label = #{label}
+            </if>
+            <if test="isDefault != null and isDefault != ''">
+                and is_default = #{isDefault}
+            </if>
+            <if test="isDeleted != null and isDeleted != ''">
+                and is_deleted = #{isDeleted}
+            </if>
+        </where>
+    </select>
+    <select id="selectByUserId" resultType="com.sky.entity.Address">
+        select *
+        from address
+        where user_id = #{userId}
+    </select>
+    <select id="queryAll" resultType="com.sky.entity.Address">
+        select *
+        from address
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+
+        <selectKey resultType="java.lang.Integer" order="BEFORE" keyProperty="id">
+            SELECT ADDRESS_SEQ.nextval FROM DUAL
+        </selectKey>
+
+        insert into address(id,<include refid="base_column_ex_id"></include>)
+        values
+        (#{id},#{userId},#{consignee},#{sex},#{phone},#{provinceCode},#{provinceName},#{cityCode},#{cityName},#{districtCode},#{districtName},#{detail},#{label},#{isDefault},#{isDeleted})
+    </insert>
+
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into address(<include refid="base_column_ex_id"></include>)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.userId}#{entity.consignee}#{entity.sex}#{entity.phone}#{entity.provinceCode}#{entity.provinceName}#{entity.cityCode}#{entity.cityName}#{entity.districtCode}#{entity.districtName}#{entity.detail}#{entity.label}#{entity.isDefault}#{entity.isDeleted})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into address(<include refid="base_column_ex_id"></include>)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.userId}#{entity.consignee}#{entity.sex}#{entity.phone}#{entity.provinceCode}#{entity.provinceName}#{entity.cityCode}#{entity.cityName}#{entity.districtCode}#{entity.districtName}#{entity.detail}#{entity.label}#{entity.isDefault}#{entity.isDeleted})
+        </foreach>
+        on duplicate key update
+        user_id = values(user_id)consignee = values(consignee)sex = values(sex)phone = values(phone)province_code =
+        values(province_code)province_name = values(province_name)city_code = values(city_code)city_name =
+        values(city_name)district_code = values(district_code)district_name = values(district_name)detail =
+        values(detail)label = values(label)is_default = values(is_default)is_deleted = values(is_deleted)
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update address
+        <set>
+            <if test="userId != null">
+                user_id = #{userId},
+            </if>
+            <if test="consignee != null and consignee != ''">
+                consignee = #{consignee},
+            </if>
+            <if test="sex != null and sex != ''">
+                sex = #{sex},
+            </if>
+            <if test="phone != null and phone != ''">
+                phone = #{phone},
+            </if>
+            <if test="provinceCode != null and provinceCode != ''">
+                province_code = #{provinceCode},
+            </if>
+            <if test="provinceName != null and provinceName != ''">
+                province_name = #{provinceName},
+            </if>
+            <if test="cityCode != null and cityCode != ''">
+                city_code = #{cityCode},
+            </if>
+            <if test="cityName != null and cityName != ''">
+                city_name = #{cityName},
+            </if>
+            <if test="districtCode != null and districtCode != ''">
+                district_code = #{districtCode},
+            </if>
+            <if test="districtName != null and districtName != ''">
+                district_name = #{districtName},
+            </if>
+            <if test="detail != null and detail != ''">
+                detail = #{detail},
+            </if>
+            <if test="label != null and label != ''">
+                label = #{label},
+            </if>
+            <if test="isDefault != null and isDefault != ''">
+                is_default = #{isDefault},
+            </if>
+            <if test="isDeleted != null and isDeleted != ''">
+                is_deleted = #{isDeleted},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete
+        from address
+        where id = #{id}
+    </delete>
+
+    <select id="getAddressIdListByUserId" resultType="java.lang.Integer">
+        select id
+        from address
+        where user_id = #{userId}
+
+    </select>
+</mapper>
+
